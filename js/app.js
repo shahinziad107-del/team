@@ -81,7 +81,6 @@ const App = {
       case 'slides': this.renderSlides(); break;
       case 'parts': this.renderParts(); break;
       case 'part-detail': this.renderPartDetail(); break;
-      case 'script': this.renderScript(); break;
       case 'files': this.renderFiles(); break;
       case 'quiz': this.renderQuiz(); break;
       default: this.renderHome(); page = 'home';
@@ -120,9 +119,6 @@ const App = {
         const part = PARTS.find(p => p.id === this.currentPartId);
         crumbs.push({ label: 'Five Parts', page: 'parts' });
         if (part) crumbs.push({ label: `الPart ${part.number}: ${part.titleAr}` });
-        break;
-      case 'script':
-        crumbs.push({ label: 'Lecture Script' });
         break;
       case 'files':
         crumbs.push({ label: 'Attached Files' });
@@ -285,7 +281,6 @@ const App = {
 
       <!-- Part Actions -->
       <div class="part-actions">
-        <button class="btn btn-primary btn-sm" onclick="App.navigate('script')">📝 Read Script</button>
         <button class="btn btn-secondary btn-sm" onclick="SlideViewer.filterByPart('${part.id}');App.navigate('slides')">🖼️ View This Part’s Slides</button>
         <button class="btn btn-secondary btn-sm" onclick="App.navigate('files')">📁 Add a File to This Part</button>
         ${part.number > 1 ? `<button class="btn btn-secondary btn-sm" onclick="App.currentPartId='part-${part.number-1}';App.navigate('part-detail')">→ Previous Part</button>` : ''}
@@ -397,58 +392,6 @@ const App = {
         ${content}
       </div>
     `;
-  },
-
-  // ==================== SCRIPT ====================
-  renderScript() {
-    const container = document.getElementById('page-script');
-
-    const formatScript = (text) => {
-      return text
-        .replace(/\[انتقال — ([^\]]+)\]/g, '<span class="slide-transition">🔄 انتقال — $1</span>')
-        .replace(/§مثال§/g, '<span class="example-highlight">📌 مثال:</span>');
-    };
-
-    container.innerHTML = `
-      <div class="script-container">
-        <h2 style="font-family:var(--font-serif);margin-bottom:0.5rem;">Lecture Script</h2>
-        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem;">
-          Arabic lecture script — ready to read aloud. Examples are highlighted, and slide transitions are marked.
-        </p>
-        <div class="script-actions">
-          <button class="btn btn-secondary btn-sm" onclick="App.copyAllScript()">📋 Copy Script</button>
-          <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ Print</button>
-          <button class="btn btn-secondary btn-sm" onclick="App.downloadScript()">📥 Download as Text</button>
-        </div>
-
-        ${PARTS.map(p => `
-          <div class="script-part">
-            <h3>الPart ${p.number}: ${p.titleAr}</h3>
-            <div class="script-text">${formatScript(SCRIPTS[p.id])}</div>
-          </div>
-        `).join('')}
-      </div>
-    `;
-  },
-
-  copyAllScript() {
-    const allText = PARTS.map(p => `=== الPart ${p.number}: ${p.titleAr} ===\n\n${SCRIPTS[p.id]}`).join('\n\n\n');
-    navigator.clipboard.writeText(allText).then(() => {
-      showToast('Script copied successfully!', 'success');
-    }).catch(() => {
-      showToast('Copy failed — try manually.', 'error');
-    });
-  },
-
-  downloadScript() {
-    const allText = PARTS.map(p => `=== الPart ${p.number}: ${p.titleAr} ===\n\n${SCRIPTS[p.id]}`).join('\n\n\n');
-    const blob = new Blob([allText], { type: 'text/plain;charset=utf-8' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'script-strategic-leadership.txt';
-    a.click();
-    URL.revokeObjectURL(a.href);
-    showToast('Script downloaded.', 'success');
   },
 
   // ==================== FILES ====================
