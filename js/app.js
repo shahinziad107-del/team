@@ -45,6 +45,7 @@ const App = {
     }
 
     this.handleRoute();
+    setTimeout(() => this.startMobileGuide(), 900);
   },
 
   handleRoute() {
@@ -515,6 +516,111 @@ const App = {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     btn.textContent = isDark ? '☀️' : '🌙';
     btn.title = isDark ? 'الوضع الفاتح' : 'الوضع الداكن';
+  },
+
+  // ==================== MOBILE FIRST-VISIT GUIDE ====================
+  startMobileGuide() {
+    if (!window.matchMedia('(max-width: 768px)').matches) return;
+    if (localStorage.getItem('mobileGuideSeen') === 'true') return;
+    if (document.getElementById('mobile-guide-overlay')) return;
+
+    this.mobileGuideSteps = [
+      { selector: '#nav-toggle', title: 'ابدأ من هنا 👆', text: 'ده زر القائمة الثلاثية. اضغط عليه عشان تفتح كل أقسام الموقع.', menuStep: true },
+      { selector: '[data-page="home"]', title: 'Home 🏠', text: 'هنا الصفحة الرئيسية، ومنها تقدر ترجع لبداية الموقع في أي وقت.' },
+      { selector: '[data-page="slides"]', title: 'Slides 🖼️', text: 'من هنا تقدر تشوف شرائح العرض وتتنقل بينها.' },
+      { selector: '[data-page="parts"]', title: 'Parts 📚', text: 'هنا هتلاقي المحتوى مقسّم إلى أجزاء، وتقدر تفتح أي جزء وتقرأه.' },
+      { selector: '[data-page="video"]', title: 'Video 🎥', text: 'من هنا تشغّل فيديو المحاضرة في صفحة مستقلة.' },
+      { selector: '[data-page="files"]', title: 'Files 📁', text: 'هنا تقدر تضيف ملفاتك المرجعية وتراجعها من نفس المتصفح.' },
+      { selector: '[data-page="quiz"]', title: 'Quiz ✏️', text: 'هنا الاختبار القصير وأسئلة المراجعة.' },
+      { selector: '#global-search', title: 'Search 🔍', text: 'استخدم خانة البحث للوصول بسرعة إلى شريحة أو جزء أو سؤال.' },
+      { selector: '#theme-btn', title: 'الوضع الليلي 🌙', text: 'اضغط هنا للتبديل بين الوضع الفاتح والوضع الليلي.' }
+    ];
+    this.mobileGuideIndex = 0;
+
+    const overlay = document.createElement('div');
+    overlay.id = 'mobile-guide-overlay';
+    overlay.className = 'mobile-guide-overlay';
+    overlay.innerHTML = `
+      <div class="mobile-guide-card" role="dialog" aria-live="polite" aria-label="إرشادات استخدام الموقع">
+        <div class="mobile-guide-arrow" aria-hidden="true">↓</div>
+        <div class="mobile-guide-step"></div>
+        <h3 class="mobile-guide-title"></h3>
+        <p class="mobile-guide-text"></p>
+        <div class="mobile-guide-actions">
+          <button class="btn btn-secondary btn-sm mobile-guide-skip">تخطي</button>
+          <button class="btn btn-primary btn-sm mobile-guide-next">التالي ←</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('.mobile-guide-skip').onclick = () => this.closeMobileGuide();
+    overlay.querySelector('.mobile-guide-next').onclick = () => this.nextMobileGuideStep();
+    this.showMobileGuideStep();
+  },
+
+  showMobileGuideStep() {
+    const overlay = document.getElementById('mobile-guide-overlay');
+    const step = this.mobileGuideSteps?.[this.mobileGuideIndex];
+    if (!overlay || !step) return;
+
+    const target = document.querySelector(step.selector);
+    if (!target) {
+      this.nextMobileGuideStep();
+      return;
+    }
+
+    if (step.menuStep) {
+      const links = document.getElementById('nav-links');
+      if (links) links.classList.remove('show');
+    }
+
+    document.querySelectorAll('.mobile-guide-target').forEach(el => el.classList.remove('mobile-guide-target'));
+    target.classList.add('mobile-guide-target');
+    target.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+
+    const card = overlay.querySelector('.mobile-guide-card');
+    const stepEl = overlay.querySelector('.mobile-guide-step');
+    const titleEl = overlay.querySelector('.mobile-guide-title');
+    const textEl = overlay.querySelector('.mobile-guide-text');
+    const nextBtn = overlay.querySelector('.mobile-guide-next');
+    stepEl.textContent = `${this.mobileGuideIndex + 1} من ${this.mobileGuideSteps.length}`;
+    titleEl.textContent = step.title;
+    textEl.textContent = step.text;
+    nextBtn.textContent = this.mobileGuideIndex === this.mobileGuideSteps.length - 1 ? 'تم ✓' : 'التالي ←';
+
+    requestAnimationFrame(() => {
+      const rect = target.getBoundingClientRect();
+      const cardHeight = card.offsetHeight || 190;
+      const gap = 16;
+      let top = rect.bottom + gap;
+      if (top + cardHeight > window.innerHeight - 12) top = rect.top - cardHeight - gap;
+      top = Math.max(12, Math.min(top, window.innerHeight - cardHeight - 12));
+      card.style.top = `${top}px`;
+      card.style.left = '12px';
+      card.style.right = '12px';
+      const arrow = overlay.querySelector('.mobile-guide-arrow');
+      arrow.textContent = top > rect.bottom ? '↑' : '↓';
+    });
+  },
+
+  nextMobileGuideStep() {
+    if (this.mobileGuideIndex === 0) {
+      const links = document.getElementById('nav-links');
+      if (links && !links.classList.contains('show')) document.getElementById('nav-toggle')?.click();
+    }
+    this.mobileGuideIndex++;
+    if (this.mobileGuideIndex >= this.mobileGuideSteps.length) {
+      this.closeMobileGuide();
+      return;
+    }
+    setTimeout(() => this.showMobileGuideStep(), 120);
+  },
+
+  closeMobileGuide() {
+    localStorage.setItem('mobileGuideSeen', 'true');
+    document.querySelectorAll('.mobile-guide-target').forEach(el => el.classList.remove('mobile-guide-target'));
+    document.getElementById('mobile-guide-overlay')?.remove();
   }
 };
 
