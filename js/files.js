@@ -24,6 +24,12 @@ const FileManager = {
     container.innerHTML = `
       <h2 style="font-family:var(--font-serif);margin-bottom:1rem;">Attached Files</h2>
 
+      <div class="private-reference-note" role="note">
+        <strong>Private reference note:</strong>
+        Files added here are stored locally in this browser only. They are not uploaded to GitHub,
+        published, or shown to other visitors; they are kept as reference material for you.
+      </div>
+
       <!-- Drop Zone -->
       <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
         <span class="drop-icon">📁</span>
