@@ -1479,12 +1479,32 @@ body {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0 0.75rem;
+  }
+
+  .navbar-inner {
+    min-height: 60px;
+    height: auto;
+    padding: 0.6rem 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .navbar-brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+  }
+
   .navbar-links { display: none; }
   .navbar-links.show {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 100%;
     left: 0; right: 0;
     background: var(--white);
     border-bottom: 1px solid var(--border);
@@ -1494,6 +1514,18 @@ body {
   }
 
   .nav-toggle { display: block; }
+
+  .nav-search {
+    order: 5;
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .nav-search input,
+  .nav-search input:focus {
+    width: 100%;
+    max-width: none;
+  }
 
   .hero h1 { font-size: 1.6rem; }
   .hero .subtitle { font-size: 0.95rem; }
@@ -1519,15 +1551,28 @@ body {
 
   .parts-nav { grid-template-columns: 1fr; }
 
-  .nav-search input { width: 120px; }
-  .nav-search input:focus { width: 160px; }
-
   .file-item { flex-wrap: wrap; }
   .file-actions { width: 100%; justify-content: flex-end; margin-top: 0.5rem; }
+
+  .slide-controls,
+  .slide-nav-btns,
+  .slide-info,
+  .slide-filter {
+    width: 100%;
+  }
+
+  .slide-nav-btns button,
+  .slide-filter select {
+    flex: 1 1 auto;
+    min-height: 40px;
+  }
+
+  .slide-filter select { min-width: 0; }
 }
 
 @media (max-width: 480px) {
   .main-content { padding: 1rem; }
+  .breadcrumbs { padding: 0.6rem 1rem 0; }
   .hero { padding: 2rem 0.5rem 1.5rem; }
   .hero h1 { font-size: 1.3rem; }
   .stats-grid { gap: 0.4rem; }
@@ -1539,6 +1584,24 @@ body {
   .slide-nav-btns { justify-content: center; }
   .slide-info { justify-content: center; }
   .slide-filter { justify-content: center; }
+
+  .card,
+  .quiz-question,
+  .upload-form { padding: 1rem; }
+
+  .drop-zone { padding: 1.5rem 1rem; }
+  .drop-zone .drop-hint { line-height: 1.5; }
+
+  .file-item { align-items: flex-start; padding: 0.75rem; }
+  .file-actions { justify-content: stretch; }
+  .file-actions button { flex: 1; min-height: 38px; }
+
+  .quiz-question h3 { font-size: 1rem; overflow-wrap: anywhere; }
+  .quiz-option { padding: 0.7rem 0.75rem; overflow-wrap: anywhere; }
+
+  .slide-display { border-radius: var(--radius-sm); }
+  .slide-fullscreen { padding: 0.75rem; }
+  .slide-fullscreen img { max-width: 100%; max-height: 78vh; }
 }
 
 /* ---------- Print ---------- */
