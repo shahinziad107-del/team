@@ -151,7 +151,7 @@ const App = {
           <button class="btn btn-primary" onclick="App.navigate('parts')">📖 ابدأ الشرح</button>
           <button class="btn btn-secondary" onclick="App.navigate('slides')">🖼️ افتح العرض</button>
           <button class="btn btn-secondary" onclick="App.navigate('files')">📁 الملفات المرفقة</button>
-          <button class="btn btn-secondary" onclick="App.navigate('quiz')">✏️ اختبر نفQك</button>
+          <button class="btn btn-secondary" onclick="App.navigate('quiz')">✏️ Quiz Yourself</button>
         </div>
         <div class="stats-grid">
           <div class="stat-card">
