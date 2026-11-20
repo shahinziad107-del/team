@@ -1629,6 +1629,14 @@ body {
   .drop-zone { padding: 1.5rem 1rem; }
   .drop-zone .drop-hint { line-height: 1.5; }
 
+  /* Use a taller mobile viewport so portrait videos are never cropped. */
+  .video-page { width: 100%; }
+  .video-frame {
+    aspect-ratio: 9 / 16;
+    min-height: 0;
+    max-height: none;
+  }
+
   .file-item { align-items: flex-start; padding: 0.75rem; }
   .file-actions { justify-content: stretch; }
   .file-actions button { flex: 1; min-height: 38px; }
