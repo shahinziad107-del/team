@@ -6,13 +6,13 @@
 // ============================================================
 
 const SITE_META = {
-  titleAr: "القيادة الاستراتيجية والمرونة الاستراتيجية",
+  titleAr: "Strategic Leadership and Strategic Flexibility",
   titleEn: "Strategic Leadership and Flexibility",
-  subtitle: "من التخطيط الاستراتيجي إلى القيادة والمرونة في بيئة متغيرة",
+  subtitle: "From Strategic Planning to Leadership and Flexibility in a Changing Environment",
   totalSlides: 36,
   totalParts: 5,
   totalQuestions: 15,
-  sourceNote: "المحتوى مبني على فيديو المحاضرة والعرض المرفق فقط. لا تضف معلومات خارجية إلى الشرح أو الإجابات إلا إذا تم تمييزها بوضوح كمعلومة خارجية."
+  sourceNote: "Content is based only on the lecture video and the attached presentation. Do not add external information to explanations or answers unless it is clearly marked as external."
 };
 
 // ============================================================
@@ -22,17 +22,17 @@ const PARTS = [
   {
     id: "part-1",
     number: 1,
-    titleAr: "التخطيط والتغيير الاستراتيجي",
+    titleAr: "Planning and Strategic Change",
     titleEn: "Planning and Strategic Change",
     slideNumbers: [1, 2, 3, 4, 5, 6, 7, 8],
     summary: "يبدأ هذا الجزء من داخل وظيفة التخطيط كواحدة من وظائف الإدارة الأربع، ثم ينتقل إلى التخطيط الاستراتيجي كطبقة طويلة المدى. يطرح مثال انخفاض مبيعات الأقراص المدمجة وانتقال السوق إلى الوسائط الرقمية، ويقارن استجابة Best Buy التي ملأت المساحة بالآلات الموسيقية مع استجابة Walmart التي أعادت تخصيص المساحة لمنتجات أخرى.",
     concepts: [
-      { term: "وظائف الإدارة الأربع", desc: "التخطيط، التنظيم، القيادة، الرقابة — المحاضرة تبدأ من التخطيط وتنتقل منه إلى الاستراتيجية." },
-      { term: "التخطيط الاستراتيجي", desc: "الطبقة طويلة المدى داخل وظيفة التخطيط — الطبقة التي تواجه البيئة المتغيرة أولاً." },
-      { term: "انخفاض مبيعات الأقراص المدمجة", desc: "المحاضر يفتح قصة الاضطراب بانخفاض الأقراص المدمجة كمنتج مادي." },
-      { term: "الوسائط الرقمية", desc: "تجاوزت الوسائط الرقمية سوق الموسيقى المادي بحلول الفترة التي تصفها المحاضرة." },
-      { term: "استجابة Best Buy", desc: "ملأت المساحة المحررة بالآلات الموسيقية — سبب مختلف لدخول العميل نفس المتجر." },
-      { term: "استجابة Walmart", desc: "أعادت تخصيص نفس المساحة لمنتجات أخرى بدلاً من تركها لفئة في تراجع." }
+      { term: "The Four Management Functions", desc: "التخطيط، التنظيم، القيادة، الرقابة — المحاضرة تبدأ من التخطيط وتنتقل منه إلى الاستراتيجية." },
+      { term: "Strategic Planning", desc: "الطبقة طويلة المدى داخل وظيفة التخطيط — الطبقة التي تواجه البيئة المتغيرة أولاً." },
+      { term: "Declining CD Sales", desc: "المحاضر يفتح قصة الاضطراب بانخفاض الأقراص المدمجة كمنتج مادي." },
+      { term: "Digital Media", desc: "تجاوزت الوسائط الرقمية سوق الموسيقى المادي بحلول الفترة التي تصفها المحاضرة." },
+      { term: "Best Buy Response", desc: "ملأت المساحة المحررة بالآلات الموسيقية — سبب مختلف لدخول العميل نفس المتجر." },
+      { term: "Walmart Response", desc: "أعادت تخصيص نفس المساحة لمنتجات أخرى بدلاً من تركها لفئة في تراجع." }
     ],
     examples: [
       { title: "Best Buy والآلات الموسيقية", text: "عندما انخفضت مبيعات الأقراص المدمجة، حوّلت Best Buy المساحة إلى بيع الآلات الموسيقية — تكيف داخل نفس شكل المتجر." },
@@ -40,34 +40,34 @@ const PARTS = [
     ],
     diagramType: "comparison",
     diagramData: {
-      title: "اضطراب واحد، استجابات مختلفة",
-      center: "انخفاض مبيعات الأقراص المدمجة",
+      title: "One Disruption, Different Responses",
+      center: "Declining CD Sales",
       branches: [
-        { label: "السوق", detail: "الوسائط الرقمية تحل محل الأقراص" },
-        { label: "Best Buy", detail: "ملء المساحة بالآلات الموسيقية" },
-        { label: "Walmart", detail: "إعادة تخصيص المساحة لمنتجات أخرى" }
+        { label: "Market", detail: "الوسائط الرقمية تحل محل الأقراص" },
+        { label: "Best Buy", detail: "Filling the Space with Musical Instruments" },
+        { label: "Walmart", detail: "Reallocating the Space to Other Products" }
       ]
     },
     quickQuestion: {
-      q: "ما الذي فعلته Best Buy بالمساحة المحررة بعد انخفاض مبيعات الأقراص المدمجة؟",
-      options: ["أغلقت ذلك القسم", "ملأته بالآلات الموسيقية", "خزّنت فيه بضائع غير مباعة"],
+      q: "What did Best Buy do with the space freed after CD sales declined?",
+      options: ["It closed that section", "It filled it with musical instruments", "It stored unsold merchandise"],
       correct: 1
     }
   },
   {
     id: "part-2",
     number: 2,
-    titleAr: "القيادة الاستراتيجية",
+    titleAr: "Strategic Leadership",
     titleEn: "Strategic Leadership",
     slideNumbers: [9, 10, 11, 12, 13, 14, 15],
     summary: "يعرّف هذا الجزء القيادة الاستراتيجية بأنها القدرة على التوقع والتخيل، والحفاظ على المرونة، والتفكير الاستراتيجي، والعمل مع الآخرين لبدء التغيير. يستخدم مثال Amazon التي تنوعت من الكتب والإلكترونيات والألعاب إلى الملابس والأزياء الأعلى سعراً. يذكر حكاية الحذاء مقاس 8 ويحدد أربعة مناصب قيادية عليا.",
     concepts: [
-      { term: "تعريف القيادة الاستراتيجية", desc: "القدرة على التوقع والتخيل، والحفاظ على المرونة، والتفكير الاستراتيجي، والعمل مع الآخرين لبدء التغيير." },
-      { term: "التوقع والتخيل", desc: "رؤية مستقبل للمنظمة قبل أن تجعله البيئة واضحاً." },
-      { term: "الحفاظ على المرونة", desc: "إبقاء الخطة مفتوحة للمراجعة أثناء تنفيذها." },
-      { term: "التفكير الاستراتيجي", desc: "قراءة القرارات في ضوء الاتجاه الأطول للمنظمة، وليس هذا الربع فقط." },
-      { term: "العمل مع الآخرين", desc: "بدء التغيير من خلال الناس، نحو مستقبل تنظيمي قابل للتحقيق وذي قيمة." },
-      { term: "المناصب القيادية الأربعة", desc: "CEO و COO و CFO و CIO — المستوى الذي تجلس فيه القيادة الاستراتيجية." }
+      { term: "Definition of Strategic Leadership", desc: "القدرة على التوقع والتخيل، والحفاظ على المرونة، والتفكير الاستراتيجي، والعمل مع الآخرين لبدء التغيير." },
+      { term: "Anticipating and Envisioning", desc: "رؤية مستقبل للمنظمة قبل أن تجعله البيئة واضحاً." },
+      { term: "Maintaining Flexibility", desc: "إبقاء الخطة مفتوحة للمراجعة أثناء تنفيذها." },
+      { term: "Strategic Thinking", desc: "قراءة القرارات في ضوء الاتجاه الأطول للمنظمة، وليس هذا الربع فقط." },
+      { term: "Working with Others", desc: "بدء التغيير من خلال الناس، نحو مستقبل تنظيمي قابل للتحقيق وذي قيمة." },
+      { term: "The Four Executive Positions", desc: "CEO و COO و CFO و CIO — المستوى الذي تجلس فيه القيادة الاستراتيجية." }
     ],
     examples: [
       { title: "تنويع Amazon", text: "انتقلت Amazon من الكتب والإلكترونيات والألعاب إلى الملابس والأزياء الأعلى سعراً — عميل مختلف وقرار شراء مختلف." },
@@ -75,18 +75,18 @@ const PARTS = [
     ],
     diagramType: "portfolio",
     diagramData: {
-      title: "توسع Amazon",
+      title: "Amazon Expansion",
       stages: [
-        { label: "نقطة البداية", items: ["الكتب", "الإلكترونيات", "الألعاب"] },
-        { label: "التوسع", items: ["الملابس والأزياء الأعلى سعراً"] }
+        { label: "Starting Point", items: ["Books", "Electronics", "Toys"] },
+        { label: "Expansion", items: ["Higher-Priced Clothing and Fashion"] }
       ]
     },
     quickQuestion: {
-      q: "ما هي العناصر الأربعة لتعريف القيادة الاستراتيجية كما ذُكرت في المحاضرة؟",
+      q: "What are the four elements in the lecture’s definition of strategic leadership?",
       options: [
-        "الميزانية، التوظيف، التقارير، التدقيق",
-        "التوقع، المرونة، التفكير الاستراتيجي، العمل مع الآخرين",
-        "التنبؤ بالطلب، التسعير، الترويج، التوزيع"
+        "Budgeting, hiring, reporting, auditing",
+        "Anticipating, flexibility, strategic thinking, working with others",
+        "Demand forecasting, pricing, promotion, distribution"
       ],
       correct: 1
     }
@@ -94,64 +94,64 @@ const PARTS = [
   {
     id: "part-3",
     number: 3,
-    titleAr: "الأدوار الاستراتيجية والقيادة الفعالة",
+    titleAr: "Strategic Roles and Effective Leadership",
     titleEn: "Strategic Roles and Effective Leadership",
     slideNumbers: [16, 17, 18, 19, 20, 21, 22],
     summary: "يقدم هذا الجزء ثمانية أدوار استراتيجية يجب أن تغطيها القيادة العليا، ثم ثمانية مكونات للقيادة الاستراتيجية الفعالة. الأدوار ليست ثمانية مناصب لثمانية أشخاص، بل هي العمل الذي يجب على القيادة تغطيته مهما كان المسمى الوظيفي.",
     concepts: [
-      { term: "كبير الاستراتيجيين", desc: "يمسك بالاستراتيجية نفسها — الاتجاه الذي تلتزم به المنظمة." },
-      { term: "المهندس الهيكلي", desc: "يشكل المنظمة بحيث يكون للاستراتيجية مكان تعيش فيه." },
-      { term: "مطور نظم المعلومات والرقابة", desc: "يبني ما تعرفه المنظمة وما تقيسه." },
-      { term: "صانع القرار الرئيسي", desc: "يتخذ الخيارات التي لا يستطيع باقي المنظمة اتخاذها." },
-      { term: "القائد صاحب الرؤية", desc: "يعطي المنظمة صورة عن المستقبل تستحق السعي نحوها." },
-      { term: "الفاعل السياسي", desc: "يعمل مع المصالح والتحالفات داخل المنظمة وحولها." },
-      { term: "مراقب ومفسر التغيير البيئي", desc: "يراقب البيئة ويقرأ ما تعنيه الإشارات." },
-      { term: "مصمم الاستراتيجية", desc: "يحول التحليل والنية إلى استراتيجية فعلية." }
+      { term: "Chief Strategist", desc: "يمسك بالاستراتيجية نفسها — الاتجاه الذي تلتزم به المنظمة." },
+      { term: "Structural Architect", desc: "يشكل المنظمة بحيث يكون للاستراتيجية مكان تعيش فيه." },
+      { term: "Information and Control Systems Developer", desc: "يبني ما تعرفه المنظمة وما تقيسه." },
+      { term: "Key Decision Maker", desc: "يتخذ الخيارات التي لا يستطيع باقي المنظمة اتخاذها." },
+      { term: "Visionary Leader", desc: "يعطي المنظمة صورة عن المستقبل تستحق السعي نحوها." },
+      { term: "Political Actor", desc: "يعمل مع المصالح والتحالفات داخل المنظمة وحولها." },
+      { term: "Environmental Change Monitor and Interpreter", desc: "يراقب البيئة ويقرأ ما تعنيه الإشارات." },
+      { term: "Strategy Designer", desc: "يحول التحليل والنية إلى استراتيجية فعلية." }
     ],
     examples: [],
     effectiveLeadership: [
-      { num: 1, title: "تحديد الهدف والرؤية", desc: "بيان ما هي المنظمة وما تحاول أن تصبح." },
-      { num: 2, title: "استغلال الكفاءات الجوهرية والحفاظ عليها", desc: "البناء على ما تجيده المنظمة والحفاظ على قوته." },
-      { num: 3, title: "تطوير رأس المال البشري", desc: "الاستثمار في الأشخاص الذين تعتمد عليهم الاستراتيجية." },
-      { num: 4, title: "خلق الثقافة واستدامتها", desc: "جعل أسلوب العمل المشترك يدعم الاستراتيجية بدلاً من مقاومتها." },
-      { num: 5, title: "إنشاء العلاقات والحفاظ عليها", desc: "الحفاظ على الروابط التي تسمح للعمل بالتدفق عبر المنظمة." },
-      { num: 6, title: "إعادة صياغة وجهات النظر السائدة", desc: "التشكيك في الافتراضات التي توقفت المنظمة عن فحصها." },
-      { num: 7, title: "التأكيد على القرارات والممارسات الأخلاقية", desc: "معاملة الأخلاق كجزء من كيفية اختيار الاستراتيجية." },
-      { num: 8, title: "وضع ضوابط متوازنة", desc: "رقابة كافية للبقاء على المسار دون تجميد القدرة على التغيير." }
+      { num: 1, title: "Determining Purpose and Vision", desc: "بيان ما هي المنظمة وما تحاول أن تصبح." },
+      { num: 2, title: "Exploiting and Maintaining Core Competencies", desc: "البناء على ما تجيده المنظمة والحفاظ على قوته." },
+      { num: 3, title: "Developing Human Capital", desc: "الاستثمار في الأشخاص الذين تعتمد عليهم الاستراتيجية." },
+      { num: 4, title: "Creating and Sustaining Culture", desc: "جعل أسلوب العمل المشترك يدعم الاستراتيجية بدلاً من مقاومتها." },
+      { num: 5, title: "Creating and Maintaining Relationships", desc: "الحفاظ على الروابط التي تسمح للعمل بالتدفق عبر المنظمة." },
+      { num: 6, title: "Reframing Dominant Views", desc: "التشكيك في الافتراضات التي توقفت المنظمة عن فحصها." },
+      { num: 7, title: "Emphasizing Ethical Decisions and Practices", desc: "معاملة الأخلاق كجزء من كيفية اختيار الاستراتيجية." },
+      { num: 8, title: "Establishing Balanced Controls", desc: "رقابة كافية للبقاء على المسار دون تجميد القدرة على التغيير." }
     ],
     diagramType: "radial",
     diagramData: {
-      title: "ثمانية أدوار استراتيجية",
-      center: "الاستراتيجية",
+      title: "Eight Strategic Roles",
+      center: "Strategy",
       items: [
-        "كبير الاستراتيجيين",
-        "المهندس الهيكلي",
-        "مطور النظم",
-        "صانع القرار",
-        "القائد الرؤيوي",
-        "الفاعل السياسي",
-        "مراقب البيئة",
-        "مصمم الاستراتيجية"
+        "Chief Strategist",
+        "Structural Architect",
+        "Systems Developer",
+        "Decision Maker",
+        "Visionary Leader",
+        "Political Actor",
+        "Environmental Monitor",
+        "Strategy Designer"
       ]
     },
     quickQuestion: {
-      q: "الأدوار الاستراتيجية الثمانية هي ثمانية مناصب لثمانية أشخاص مختلفين — صح أم خطأ؟",
-      options: ["صح", "خطأ — هي العمل الذي يجب على القيادة تغطيته مهما كان المسمى"],
+      q: "The eight strategic roles are eight positions for eight different people — true or false?",
+      options: ["True", "False — they are the work leadership must cover regardless of the job title"],
       correct: 1
     }
   },
   {
     id: "part-4",
     number: 4,
-    titleAr: "المرونة الاستراتيجية في ظروف عدم اليقين",
+    titleAr: "Strategic Flexibility in Uncertainty",
     titleEn: "Strategic Flexibility in Uncertainty",
     slideNumbers: [23, 24, 25, 26, 27, 28, 29],
     summary: "يتناول هذا الجزء لماذا تحتاج المنظمة إلى المرونة عندما يكون عدم اليقين هو الحالة الطبيعية. يقدم حالتين: Spartan Motors التي غيّرت دورة التخطيط من خطة سنوية مع مراجعة ربع سنوية إلى خطة ثلاث سنوات مع تحديث شهري تحت قيادة John Sztykiel، وJ.C. Penney التي وضعت خطة نمو لخمس سنوات عام 2007 ثم اضطرت لاستخدام خطة مؤقتة بعد تغير الظروف الاقتصادية.",
     concepts: [
-      { term: "الركود يكشف الجمود", desc: "خطة مبنية لظروف مستقرة ليس لديها إجابة عندما تنهار الظروف." },
-      { term: "عدم اليقين هو الحالة الطبيعية", desc: "المحاضرة تعامل الاضطراب على أنه البيئة التي يجب أن تعمل فيها الاستراتيجية الآن." },
-      { term: "المراقبة ثم الاستجابة", desc: "الاختبار هو ما إذا كانت النتائج تُظهر أن الاستراتيجية تعمل — ومدى سرعة رد الفعل عندما لا تعمل." },
-      { term: "الخطة المؤقتة (Bridge Plan)", desc: "خطة قصيرة المدى لعبور الوضع الفوري، دون التظاهر بأن الخطة الأصلية لا تزال سارية." }
+      { term: "Recession Reveals Rigidity", desc: "خطة مبنية لظروف مستقرة ليس لديها إجابة عندما تنهار الظروف." },
+      { term: "Uncertainty Is the Normal Condition", desc: "المحاضرة تعامل الاضطراب على أنه البيئة التي يجب أن تعمل فيها الاستراتيجية الآن." },
+      { term: "Monitor Then Respond", desc: "الاختبار هو ما إذا كانت النتائج تُظهر أن الاستراتيجية تعمل — ومدى سرعة رد الفعل عندما لا تعمل." },
+      { term: "Bridge Plan", desc: "خطة قصيرة المدى لعبور الوضع الفوري، دون التظاهر بأن الخطة الأصلية لا تزال سارية." }
     ],
     examples: [
       { title: "Spartan Motors — النمط القديم", text: "خطة استراتيجية سنوية + خطة مالية لثلاث سنوات، تُراجع ربع سنوياً فقط." },
@@ -161,16 +161,16 @@ const PARTS = [
     ],
     diagramType: "timeline",
     diagramData: {
-      title: "Spartan Motors: تغيير إيقاع التخطيط",
-      before: { label: "النمط السابق", items: ["خطة استراتيجية سنوية", "خطة مالية 3 سنوات", "مراجعة ربع سنوية"] },
-      after: { label: "النمط الجديد (John Sztykiel)", items: ["خطة استراتيجية 3 سنوات", "تحديث شهري", "الإدارة العليا تراجع"] }
+      title: "Spartan Motors: Changing the Planning Cadence",
+      before: { label: "Earlier Pattern", items: ["Annual Strategic Plan", "Three-Year Financial Plan", "Quarterly Review"] },
+      after: { label: "New Pattern (John Sztykiel)", items: ["Three-Year Strategic Plan", "Monthly Update", "Top Management Reviews"] }
     },
     quickQuestion: {
-      q: "ماذا حدث لخطة J.C. Penney عام 2007؟",
+      q: "What happened to J.C. Penney’s 2007 plan?",
       options: [
-        "نُفذت بالكامل دون تغيير",
-        "لم تُكتب أصلاً",
-        "تعطلت بسبب الظروف واستُخدمت خطة مؤقتة"
+        "It was implemented in full without change",
+        "It was never written",
+        "It was disrupted by conditions, and a bridge plan was used"
       ],
       correct: 2
     }
@@ -178,37 +178,37 @@ const PARTS = [
   {
     id: "part-5",
     number: 5,
-    titleAr: "تطوير المرونة الاستراتيجية",
+    titleAr: "Developing Strategic Flexibility",
     titleEn: "Developing Strategic Flexibility",
     slideNumbers: [30, 31, 32, 33],
     summary: "يقدم هذا الجزء ثماني ممارسات لتطوير المرونة الاستراتيجية، مرتبة في أربعة أزواج عملية: وحدة الهدف مع الموارد القابلة لإعادة التوزيع، واستكشاف البدائل مع مراقبة النتائج، والانفتاح على المعلومات السلبية مع الأفكار الخارجية، والإبقاء على أكثر من بديل مع التعلم من الأخطاء.",
     concepts: [
-      { term: "وحدة الهدف", desc: "الفريق القيادي يتحرك معاً؛ الأجندات المتنافسة داخل القيادة تمنع أي تحول." },
-      { term: "الموارد القابلة لإعادة التوزيع", desc: "موارد يمكن نقلها إلى حيث يحتاجها الوضع الجديد." },
-      { term: "استكشاف البدائل", desc: "معاملة البيئة كشيء يُستكشف، لا كشيء مفهوم سلفاً." },
-      { term: "مراقبة النتائج وقياسها", desc: "بدون القياس لا توجد إشارة بأن الاستراتيجية تحتاج إلى تغيير." },
-      { term: "الانفتاح على المعلومات السلبية", desc: "تشجيع الموظفين على الإبلاغ عما يسير خطأ بينما لا يزال يمكن التصرف." },
-      { term: "الأفكار ووجهات النظر الخارجية", desc: "إدخال آراء لا تولدها المنظمة بنفسها." },
-      { term: "الإبقاء على أكثر من بديل", desc: "الحفاظ على أكثر من خيار حي حتى لا تكون خطة واحدة هي الطريق الوحيد." },
-      { term: "التعلم من الأخطاء", desc: "معاملة الخطوة الفاشلة كمعلومة للقرار التالي." }
+      { term: "Unity of Purpose", desc: "الفريق القيادي يتحرك معاً؛ الأجندات المتنافسة داخل القيادة تمنع أي تحول." },
+      { term: "Redeployable Resources", desc: "موارد يمكن نقلها إلى حيث يحتاجها الوضع الجديد." },
+      { term: "Exploring Alternatives", desc: "معاملة البيئة كشيء يُستكشف، لا كشيء مفهوم سلفاً." },
+      { term: "Monitoring and Measuring Results", desc: "بدون القياس لا توجد إشارة بأن الاستراتيجية تحتاج إلى تغيير." },
+      { term: "Openness to Negative Information", desc: "تشجيع الموظفين على الإبلاغ عما يسير خطأ بينما لا يزال يمكن التصرف." },
+      { term: "External Ideas and Perspectives", desc: "إدخال آراء لا تولدها المنظمة بنفسها." },
+      { term: "Maintaining Multiple Alternatives", desc: "الحفاظ على أكثر من خيار حي حتى لا تكون خطة واحدة هي الطريق الوحيد." },
+      { term: "Learning from Mistakes", desc: "معاملة الخطوة الفاشلة كمعلومة للقرار التالي." }
     ],
     examples: [],
     diagramType: "grid",
     diagramData: {
-      title: "ثماني ممارسات في أربعة أزواج",
+      title: "Eight Practices in Four Pairs",
       pairs: [
-        { header: "هدف مشترك", items: ["وحدة الهدف", "موارد قابلة لإعادة التوزيع"] },
-        { header: "انتباه واسع", items: ["استكشاف البدائل", "مراقبة النتائج وقياسها"] },
-        { header: "معلومات مفتوحة", items: ["الانفتاح على المعلومات السلبية", "أفكار ووجهات نظر خارجية"] },
-        { header: "خيارات محفوظة", items: ["الإبقاء على أكثر من بديل", "التعلم من الأخطاء"] }
+        { header: "Shared Purpose", items: ["Unity of Purpose", "Redeployable Resources"] },
+        { header: "Broad Attention", items: ["Exploring Alternatives", "Monitoring and Measuring Results"] },
+        { header: "Open Information", items: ["Openness to Negative Information", "External Ideas and Perspectives"] },
+        { header: "Preserved Options", items: ["Maintaining Multiple Alternatives", "Learning from Mistakes"] }
       ]
     },
     quickQuestion: {
-      q: "أي ممارسة تساعد على سماع الأخبار السيئة مبكراً؟",
+      q: "Which practice helps an organization hear bad news early?",
       options: [
-        "مكافأة التقارير الإيجابية فقط",
-        "تشجيع الموظفين على نقل المعلومات السلبية",
-        "حصر المعلومات في الإدارة العليا"
+        "Rewarding only positive reports",
+        "Encouraging employees to share negative information",
+        "Restricting information to top management"
       ],
       correct: 1
     }
@@ -219,42 +219,42 @@ const PARTS = [
 // SLIDES DATA (36 slides)
 // ============================================================
 const SLIDES = [
-  { num: 1, partId: "part-1", titleEn: "Strategic Leadership and Strategic Flexibility", titleAr: "القيادة الاستراتيجية والمرونة الاستراتيجية", hasChart: false, isMCQ: false, image: "assets/slides/slide-01.png" },
-  { num: 2, partId: "part-1", titleEn: "Planning and Strategic Change", titleAr: "التخطيط والتغيير الاستراتيجي", hasChart: false, isMCQ: false, image: "assets/slides/slide-02.png" },
-  { num: 3, partId: "part-1", titleEn: "Planning in Management", titleAr: "التخطيط في الإدارة", hasChart: true, isMCQ: false, image: "assets/slides/slide-03.png" },
-  { num: 4, partId: "part-1", titleEn: "Planning Inside the Management Functions", titleAr: "التخطيط ضمن وظائف الإدارة", hasChart: true, isMCQ: false, image: "assets/slides/slide-04.png" },
-  { num: 5, partId: "part-1", titleEn: "When Physical Music Media Declines", titleAr: "عندما تنخفض وسائط الموسيقى المادية", hasChart: false, isMCQ: false, image: "assets/slides/slide-05.png" },
-  { num: 6, partId: "part-1", titleEn: "One Disruption, Three Responses", titleAr: "اضطراب واحد، ثلاث استجابات", hasChart: true, isMCQ: false, image: "assets/slides/slide-06.png" },
-  { num: 7, partId: "part-1", titleEn: "Best Buy and Walmart Adapt", titleAr: "Best Buy و Walmart يتكيفان", hasChart: false, isMCQ: false, image: "assets/slides/slide-07.png" },
-  { num: 8, partId: "part-1", titleEn: "Best Buy and Walmart, Side by Side", titleAr: "Best Buy و Walmart جنباً إلى جنب", hasChart: true, isMCQ: false, image: "assets/slides/slide-08.png" },
-  { num: 9, partId: "part-2", titleEn: "Strategic Leadership", titleAr: "القيادة الاستراتيجية", hasChart: false, isMCQ: false, image: "assets/slides/slide-09.png" },
-  { num: 10, partId: "part-2", titleEn: "What Strategic Leadership Means", titleAr: "ما تعنيه القيادة الاستراتيجية", hasChart: false, isMCQ: false, image: "assets/slides/slide-10.png" },
-  { num: 11, partId: "part-2", titleEn: "Amazon: Diversification as Adaptation", titleAr: "Amazon: التنويع كتكيف", hasChart: true, isMCQ: false, image: "assets/slides/slide-11.png" },
-  { num: 12, partId: "part-2", titleEn: "Amazon: From Three Categories to Fashion", titleAr: "Amazon: من ثلاث فئات إلى الأزياء", hasChart: true, isMCQ: false, image: "assets/slides/slide-12.png" },
-  { num: 13, partId: "part-2", titleEn: "The Size-8 Shoe Story", titleAr: "حكاية الحذاء مقاس 8", hasChart: false, isMCQ: false, image: "assets/slides/slide-13.png" },
-  { num: 14, partId: "part-2", titleEn: "Top Management and Strategic Work", titleAr: "الإدارة العليا والعمل الاستراتيجي", hasChart: true, isMCQ: false, image: "assets/slides/slide-14.png" },
-  { num: 15, partId: "part-2", titleEn: "Where Strategic Leadership Sits", titleAr: "أين تجلس القيادة الاستراتيجية", hasChart: true, isMCQ: false, image: "assets/slides/slide-15.png" },
-  { num: 16, partId: "part-3", titleEn: "Strategic Roles and Effective Leadership", titleAr: "الأدوار الاستراتيجية والقيادة الفعالة", hasChart: false, isMCQ: false, image: "assets/slides/slide-16.png" },
-  { num: 17, partId: "part-3", titleEn: "Eight Strategic Roles — 1 to 4", titleAr: "ثمانية أدوار استراتيجية — 1 إلى 4", hasChart: true, isMCQ: false, image: "assets/slides/slide-17.png" },
-  { num: 18, partId: "part-3", titleEn: "Eight Strategic Roles — 5 to 8", titleAr: "ثمانية أدوار استراتيجية — 5 إلى 8", hasChart: true, isMCQ: false, image: "assets/slides/slide-18.png" },
-  { num: 19, partId: "part-3", titleEn: "Eight Roles, One Strategy", titleAr: "ثمانية أدوار، استراتيجية واحدة", hasChart: true, isMCQ: false, image: "assets/slides/slide-19.png" },
-  { num: 20, partId: "part-3", titleEn: "Effective Strategic Leadership — 1 to 4", titleAr: "القيادة الاستراتيجية الفعالة — 1 إلى 4", hasChart: false, isMCQ: false, image: "assets/slides/slide-20.png" },
-  { num: 21, partId: "part-3", titleEn: "Effective Strategic Leadership — 5 to 8", titleAr: "القيادة الاستراتيجية الفعالة — 5 إلى 8", hasChart: false, isMCQ: false, image: "assets/slides/slide-21.png" },
-  { num: 22, partId: "part-3", titleEn: "Eight Components in Three Layers", titleAr: "ثمانية مكونات في ثلاث طبقات", hasChart: true, isMCQ: false, image: "assets/slides/slide-22.png" },
-  { num: 23, partId: "part-4", titleEn: "Strategic Flexibility in Uncertainty", titleAr: "المرونة الاستراتيجية في ظروف عدم اليقين", hasChart: false, isMCQ: false, image: "assets/slides/slide-23.png" },
-  { num: 24, partId: "part-4", titleEn: "Why Strategic Flexibility Matters", titleAr: "لماذا تهم المرونة الاستراتيجية", hasChart: false, isMCQ: false, image: "assets/slides/slide-24.png" },
-  { num: 25, partId: "part-4", titleEn: "Spartan Motors: The Earlier Pattern", titleAr: "Spartan Motors: النمط السابق", hasChart: true, isMCQ: false, image: "assets/slides/slide-25.png" },
-  { num: 26, partId: "part-4", titleEn: "Spartan Motors: A More Flexible Pattern", titleAr: "Spartan Motors: نمط أكثر مرونة", hasChart: true, isMCQ: false, image: "assets/slides/slide-26.png" },
-  { num: 27, partId: "part-4", titleEn: "Spartan Motors: Changing the Cadence", titleAr: "Spartan Motors: تغيير الإيقاع", hasChart: true, isMCQ: false, image: "assets/slides/slide-27.png" },
-  { num: 28, partId: "part-4", titleEn: "J.C. Penney and the Bridge Plan", titleAr: "J.C. Penney والخطة المؤقتة", hasChart: true, isMCQ: false, image: "assets/slides/slide-28.png" },
-  { num: 29, partId: "part-4", titleEn: "J.C. Penney: The Bridge Plan", titleAr: "J.C. Penney: الخطة المؤقتة", hasChart: true, isMCQ: false, image: "assets/slides/slide-29.png" },
-  { num: 30, partId: "part-5", titleEn: "Developing Strategic Flexibility", titleAr: "تطوير المرونة الاستراتيجية", hasChart: false, isMCQ: false, image: "assets/slides/slide-30.png" },
-  { num: 31, partId: "part-5", titleEn: "Eight Flexibility Practices — 1 to 4", titleAr: "ثماني ممارسات للمرونة — 1 إلى 4", hasChart: false, isMCQ: false, image: "assets/slides/slide-31.png" },
-  { num: 32, partId: "part-5", titleEn: "Eight Flexibility Practices — 5 to 8", titleAr: "ثماني ممارسات للمرونة — 5 إلى 8", hasChart: false, isMCQ: false, image: "assets/slides/slide-32.png" },
-  { num: 33, partId: "part-5", titleEn: "Eight Practices, Four Working Pairs", titleAr: "ثماني ممارسات في أربعة أزواج", hasChart: true, isMCQ: false, image: "assets/slides/slide-33.png" },
-  { num: 34, partId: null, titleEn: "Review MCQ 1-5", titleAr: "أسئلة مراجعة 1–5", hasChart: false, isMCQ: true, image: "assets/slides/slide-34.png" },
-  { num: 35, partId: null, titleEn: "Review MCQ 6-10", titleAr: "أسئلة مراجعة 6–10", hasChart: false, isMCQ: true, image: "assets/slides/slide-35.png" },
-  { num: 36, partId: null, titleEn: "Review MCQ 11-15", titleAr: "أسئلة مراجعة 11–15", hasChart: false, isMCQ: true, image: "assets/slides/slide-36.png" }
+  { num: 1, partId: "part-1", titleEn: "Strategic Leadership and Strategic Flexibility", titleAr: "Strategic Leadership and Strategic Flexibility", hasChart: false, isMCQ: false, image: "assets/slides/slide-01.png" },
+  { num: 2, partId: "part-1", titleEn: "Planning and Strategic Change", titleAr: "Planning and Strategic Change", hasChart: false, isMCQ: false, image: "assets/slides/slide-02.png" },
+  { num: 3, partId: "part-1", titleEn: "Planning in Management", titleAr: "Planning in Management", hasChart: true, isMCQ: false, image: "assets/slides/slide-03.png" },
+  { num: 4, partId: "part-1", titleEn: "Planning Inside the Management Functions", titleAr: "Planning Inside the Management Functions", hasChart: true, isMCQ: false, image: "assets/slides/slide-04.png" },
+  { num: 5, partId: "part-1", titleEn: "When Physical Music Media Declines", titleAr: "When Physical Music Media Declines", hasChart: false, isMCQ: false, image: "assets/slides/slide-05.png" },
+  { num: 6, partId: "part-1", titleEn: "One Disruption, Three Responses", titleAr: "One Disruption, Three Responses", hasChart: true, isMCQ: false, image: "assets/slides/slide-06.png" },
+  { num: 7, partId: "part-1", titleEn: "Best Buy and Walmart Adapt", titleAr: "Best Buy and Walmart Adapt", hasChart: false, isMCQ: false, image: "assets/slides/slide-07.png" },
+  { num: 8, partId: "part-1", titleEn: "Best Buy and Walmart, Side by Side", titleAr: "Best Buy and Walmart, Side by Side", hasChart: true, isMCQ: false, image: "assets/slides/slide-08.png" },
+  { num: 9, partId: "part-2", titleEn: "Strategic Leadership", titleAr: "Strategic Leadership", hasChart: false, isMCQ: false, image: "assets/slides/slide-09.png" },
+  { num: 10, partId: "part-2", titleEn: "What Strategic Leadership Means", titleAr: "What Strategic Leadership Means", hasChart: false, isMCQ: false, image: "assets/slides/slide-10.png" },
+  { num: 11, partId: "part-2", titleEn: "Amazon: Diversification as Adaptation", titleAr: "Amazon: Diversification as Adaptation", hasChart: true, isMCQ: false, image: "assets/slides/slide-11.png" },
+  { num: 12, partId: "part-2", titleEn: "Amazon: From Three Categories to Fashion", titleAr: "Amazon: From Three Categories to Fashion", hasChart: true, isMCQ: false, image: "assets/slides/slide-12.png" },
+  { num: 13, partId: "part-2", titleEn: "The Size-8 Shoe Story", titleAr: "The Size-8 Shoe Story", hasChart: false, isMCQ: false, image: "assets/slides/slide-13.png" },
+  { num: 14, partId: "part-2", titleEn: "Top Management and Strategic Work", titleAr: "Top Management and Strategic Work", hasChart: true, isMCQ: false, image: "assets/slides/slide-14.png" },
+  { num: 15, partId: "part-2", titleEn: "Where Strategic Leadership Sits", titleAr: "Where Strategic Leadership Sits", hasChart: true, isMCQ: false, image: "assets/slides/slide-15.png" },
+  { num: 16, partId: "part-3", titleEn: "Strategic Roles and Effective Leadership", titleAr: "Strategic Roles and Effective Leadership", hasChart: false, isMCQ: false, image: "assets/slides/slide-16.png" },
+  { num: 17, partId: "part-3", titleEn: "Eight Strategic Roles — 1 to 4", titleAr: "Eight Strategic Roles — 1 to 4", hasChart: true, isMCQ: false, image: "assets/slides/slide-17.png" },
+  { num: 18, partId: "part-3", titleEn: "Eight Strategic Roles — 5 to 8", titleAr: "Eight Strategic Roles — 5 to 8", hasChart: true, isMCQ: false, image: "assets/slides/slide-18.png" },
+  { num: 19, partId: "part-3", titleEn: "Eight Roles, One Strategy", titleAr: "Eight Roles, One Strategy", hasChart: true, isMCQ: false, image: "assets/slides/slide-19.png" },
+  { num: 20, partId: "part-3", titleEn: "Effective Strategic Leadership — 1 to 4", titleAr: "Effective Strategic Leadership — 1 to 4", hasChart: false, isMCQ: false, image: "assets/slides/slide-20.png" },
+  { num: 21, partId: "part-3", titleEn: "Effective Strategic Leadership — 5 to 8", titleAr: "Effective Strategic Leadership — 5 to 8", hasChart: false, isMCQ: false, image: "assets/slides/slide-21.png" },
+  { num: 22, partId: "part-3", titleEn: "Eight Components in Three Layers", titleAr: "Eight Components in Three Layers", hasChart: true, isMCQ: false, image: "assets/slides/slide-22.png" },
+  { num: 23, partId: "part-4", titleEn: "Strategic Flexibility in Uncertainty", titleAr: "Strategic Flexibility in Uncertainty", hasChart: false, isMCQ: false, image: "assets/slides/slide-23.png" },
+  { num: 24, partId: "part-4", titleEn: "Why Strategic Flexibility Matters", titleAr: "Why Strategic Flexibility Matters", hasChart: false, isMCQ: false, image: "assets/slides/slide-24.png" },
+  { num: 25, partId: "part-4", titleEn: "Spartan Motors: The Earlier Pattern", titleAr: "Spartan Motors: The Earlier Pattern", hasChart: true, isMCQ: false, image: "assets/slides/slide-25.png" },
+  { num: 26, partId: "part-4", titleEn: "Spartan Motors: A More Flexible Pattern", titleAr: "Spartan Motors: A More Flexible Pattern", hasChart: true, isMCQ: false, image: "assets/slides/slide-26.png" },
+  { num: 27, partId: "part-4", titleEn: "Spartan Motors: Changing the Cadence", titleAr: "Spartan Motors: Changing the Cadence", hasChart: true, isMCQ: false, image: "assets/slides/slide-27.png" },
+  { num: 28, partId: "part-4", titleEn: "J.C. Penney and the Bridge Plan", titleAr: "J.C. Penney and the Bridge Plan", hasChart: true, isMCQ: false, image: "assets/slides/slide-28.png" },
+  { num: 29, partId: "part-4", titleEn: "J.C. Penney: The Bridge Plan", titleAr: "J.C. Penney: The Bridge Plan", hasChart: true, isMCQ: false, image: "assets/slides/slide-29.png" },
+  { num: 30, partId: "part-5", titleEn: "Developing Strategic Flexibility", titleAr: "Developing Strategic Flexibility", hasChart: false, isMCQ: false, image: "assets/slides/slide-30.png" },
+  { num: 31, partId: "part-5", titleEn: "Eight Flexibility Practices — 1 to 4", titleAr: "Eight Flexibility Practices — 1 to 4", hasChart: false, isMCQ: false, image: "assets/slides/slide-31.png" },
+  { num: 32, partId: "part-5", titleEn: "Eight Flexibility Practices — 5 to 8", titleAr: "Eight Flexibility Practices — 5 to 8", hasChart: false, isMCQ: false, image: "assets/slides/slide-32.png" },
+  { num: 33, partId: "part-5", titleEn: "Eight Practices, Four Working Pairs", titleAr: "Eight Practices, Four Working Pairs", hasChart: true, isMCQ: false, image: "assets/slides/slide-33.png" },
+  { num: 34, partId: null, titleEn: "Review MCQ 1-5", titleAr: "Review MCQ 1–5", hasChart: false, isMCQ: true, image: "assets/slides/slide-34.png" },
+  { num: 35, partId: null, titleEn: "Review MCQ 6-10", titleAr: "Review MCQ 6–10", hasChart: false, isMCQ: true, image: "assets/slides/slide-35.png" },
+  { num: 36, partId: null, titleEn: "Review MCQ 11-15", titleAr: "Review MCQ 11–15", hasChart: false, isMCQ: true, image: "assets/slides/slide-36.png" }
 ];
 
 // ============================================================
@@ -263,135 +263,135 @@ const SLIDES = [
 const QUIZ = [
   {
     id: "q1", partId: "part-1",
-    question: "في المحاضرة، التخطيط الاستراتيجي ينتمي إلى أي وظيفة إدارية؟",
-    options: ["التنظيم", "القيادة", "التخطيط", "الرقابة"],
+    question: "In the lecture, which management function does strategic planning belong to?",
+    options: ["Organizing", "Leading", "Planning", "Controlling"],
     correctIndex: 2,
     explanation: "المحاضرة تبدأ من وظيفة التخطيط وتنتقل منها إلى التخطيط الاستراتيجي كطبقة طويلة المدى."
   },
   {
     id: "q2", partId: "part-1",
-    question: "أي منتج يفتح مثال الاضطراب في المحاضرة بانخفاضه؟",
-    options: ["الكتالوجات المطبوعة", "الأقراص المدمجة", "الآلات الموسيقية", "أسطوانات الفينيل"],
+    question: "Which product opens the lecture’s disruption example by declining?",
+    options: ["Printed catalogs", "Compact discs", "Musical instruments", "Vinyl records"],
     correctIndex: 1,
     explanation: "المحاضر يفتح قصة الاضطراب بانخفاض الأقراص المدمجة (CDs) كمنتج مادي."
   },
   {
     id: "q3", partId: "part-1",
-    question: "ما الذي تجاوز سوق الموسيقى المادي حسب المحاضرة؟",
-    options: ["الوسائط الرقمية", "الحفلات الحية", "البث الإذاعي", "المبيعات المستعملة"],
+    question: "What surpassed the physical music market according to the lecture?",
+    options: ["Digital Media", "Live concerts", "Radio broadcasting", "Used sales"],
     correctIndex: 0,
     explanation: "الوسائط الرقمية تجاوزت سوق الموسيقى المادي القديم بحلول الفترة التي تصفها المحاضرة."
   },
   {
     id: "q4", partId: "part-1",
-    question: "كيف استخدمت Best Buy المساحة المحررة بعد انخفاض مبيعات الأقراص المدمجة؟",
-    options: ["أغلقت ذلك القسم", "نقلت خدمة العملاء إليه", "ملأته بالآلات الموسيقية", "خزّنت فيه بضائع غير مباعة"],
+    question: "How did Best Buy use the space freed after CD sales declined?",
+    options: ["It closed that section", "It moved customer service there", "It filled it with musical instruments", "It stored unsold merchandise"],
     correctIndex: 2,
     explanation: "المساحة التي كانت تُستخدم لبيع الأقراص حُولت إلى بيع الآلات الموسيقية — سبب مختلف لدخول العميل نفس المتجر."
   },
   {
     id: "q5", partId: "part-1",
-    question: "ماذا تضيف مقارنة Walmart؟",
-    options: ["أن استجابة مختلفة كانت ممكنة", "أن استجابة واحدة فقط يمكن أن تنجح", "أن التجار الصغار فقط تأثروا", "أن Walmart استمرت في بيع الأقراص"],
+    question: "What does the Walmart comparison add?",
+    options: ["That a different response was possible", "That only one response can succeed", "That only small retailers were affected", "That Walmart continued selling CDs"],
     correctIndex: 0,
     explanation: "المحاضرة تستخدم كلتا الشركتين لإظهار أن نفس الاضطراب يمكن أن ينتج استجابات مختلفة ومتعمدة بنفس القدر."
   },
   {
     id: "q6", partId: "part-2",
-    question: "أي مجموعة تكمل تعريف القيادة الاستراتيجية في المحاضرة؟",
+    question: "Which group completes the lecture’s definition of strategic leadership?",
     options: [
-      "الميزانية، التوظيف، التقارير، التدقيق",
-      "التوقع، الحفاظ على المرونة، التفكير الاستراتيجي، العمل مع الآخرين",
-      "التنبؤ بالطلب، التسعير، الترويج، التوزيع",
-      "التوظيف، التدريب، التقييم، المكافأة"
+      "Budgeting, hiring, reporting, auditing",
+      "Anticipating, maintaining flexibility, strategic thinking, working with others",
+      "Demand forecasting, pricing, promotion, distribution",
+      "Hiring, training, evaluation, rewards"
     ],
     correctIndex: 1,
     explanation: "التعريف كما ورد في المحاضرة: القدرة على التوقع والتخيل، والحفاظ على المرونة، والتفكير الاستراتيجي، والعمل مع الآخرين لبدء التغيير."
   },
   {
     id: "q7", partId: "part-2",
-    question: "انتقال Amazon كما تصفه المحاضرة كان من الكتب والإلكترونيات والألعاب إلى...؟",
-    options: ["تجارة البقالة", "الملابس والأزياء الأعلى سعراً", "الآلات الموسيقية", "المركبات التجارية"],
+    question: "According to the lecture, Amazon moved from books, electronics, and toys to…?",
+    options: ["Grocery retail", "Higher-Priced Clothing and Fashion", "Musical instruments", "Commercial vehicles"],
     correctIndex: 1,
     explanation: "المحاضرة تصف دخول Amazon إلى الملابس والأزياء الأعلى سعراً — عميل مختلف وقرار شراء مختلف."
   },
   {
     id: "q8", partId: "part-2",
-    question: "لماذا يروي المحاضر حكاية الحذاء مقاس 8؟",
+    question: "Why does the lecturer tell the size-8 shoe story?",
     options: [
-      "للإبلاغ عن أرقام مبيعات فئة جديدة",
-      "لإظهار الالتزام المطلوب لخدمة نشاط جديد",
-      "لانتقاد تسعير Amazon",
-      "لتعريف التنويع رسمياً"
+      "To report sales figures for a new category",
+      "To show the commitment required to serve a new business",
+      "To criticize Amazon’s pricing",
+      "To formally define diversification"
     ],
     correctIndex: 1,
     explanation: "حكاية ذكرها المحاضر لتوضيح الالتزام بخدمة النشاط الجديد، وليست إحصاءً مستقلاً أو حقيقة موثقة من مصدر خارجي."
   },
   {
     id: "q9", partId: "part-2",
-    question: "أي أربعة أدوار تجلس على قمة المنظمة؟",
+    question: "Which four roles sit at the top of the organization?",
     options: [
-      "CEO و COO و CFO و CIO",
-      "CEO و CMO و CHRO و CTO",
-      "المالك، المدير، المشرف، قائد الفريق",
-      "الرئيس، السكرتير، أمين الصندوق، المدقق"
+      "CEO, COO, CFO, and CIO",
+      "CEO, CMO, CHRO, and CTO",
+      "Owner, manager, supervisor, and team leader",
+      "President, secretary, treasurer, and auditor"
     ],
     correctIndex: 0,
     explanation: "المحاضرة تسمي CEO و COO و CFO و CIO كالمستوى الذي تجلس فيه القيادة الاستراتيجية."
   },
   {
     id: "q10", partId: "part-3",
-    question: "أي من التالي هو أحد الأدوار الاستراتيجية الثمانية المذكورة؟",
-    options: ["رئيس اللوجستيات", "كبير الاستراتيجيين", "ممثل النقابة", "سفير العلامة التجارية"],
+    question: "Which of the following is one of the eight strategic roles mentioned?",
+    options: ["Head of logistics", "Chief Strategist", "Union representative", "Brand ambassador"],
     correctIndex: 1,
     explanation: "كبير الاستراتيجيين (Chief Strategist) هو أحد الأدوار الثمانية التي ذكرتها المحاضرة."
   },
   {
     id: "q11", partId: "part-3",
-    question: "أي مكون هو جزء من القيادة الاستراتيجية الفعالة في المحاضرة؟",
-    options: ["تطوير رأس المال البشري", "تقليل تنوع المنتجات", "مركزة كل القرارات", "تجنب وجهات النظر الخارجية"],
+    question: "Which component is part of effective strategic leadership in the lecture?",
+    options: ["Developing Human Capital", "Reducing product variety", "Centralizing all decisions", "Avoiding external perspectives"],
     correctIndex: 0,
     explanation: "تطوير رأس المال البشري — الاستثمار في الأشخاص الذين تعتمد عليهم الاستراتيجية — هو أحد المكونات الثمانية."
   },
   {
     id: "q12", partId: "part-4",
-    question: "في النمط السابق لـ Spartan Motors، كم مرة كانت الخطة تُراجع؟",
-    options: ["أسبوعياً", "شهرياً", "ربع سنوياً", "مرة كل خمس سنوات"],
+    question: "In the earlier Spartan Motors pattern, how often was the plan reviewed?",
+    options: ["Weekly", "Monthly", "Quarterly", "Once every five years"],
     correctIndex: 2,
     explanation: "في النمط السابق، كانت الخطة المالية لثلاث سنوات تُراجع ربع سنوياً — اللحظة المنتظمة الوحيدة التي تلتقي فيها الخطة بالواقع."
   },
   {
     id: "q13", partId: "part-4",
-    question: "ما الذي غيّره John Sztykiel في Spartan Motors؟",
+    question: "What did John Sztykiel change at Spartan Motors?",
     options: [
-      "أفق التخطيط وعدد مرات مراجعة الخطة",
-      "خط إنتاج الشركة فقط",
-      "ملكية الشركة",
-      "لا شيء؛ بقيت الخطة سنوية"
+      "The planning horizon and the frequency of plan reviews",
+      "Only the company’s product line",
+      "The company’s ownership",
+      "Nothing; the plan remained annual"
     ],
     correctIndex: 0,
     explanation: "التغيير مرتبط بالـ CEO، ومع الإدارة العليا: خطة استراتيجية لثلاث سنوات تُحدّث شهرياً بدلاً من خطة سنوية تُراجع ربع سنوياً."
   },
   {
     id: "q14", partId: "part-4",
-    question: "ماذا حدث لخطة J.C. Penney عام 2007؟",
+    question: "What happened to J.C. Penney’s 2007 plan?",
     options: [
-      "لم تُكتب أبداً",
-      "نُفذت بالكامل دون تغيير",
-      "تعطلت واستُخدمت خطة مؤقتة",
-      "تحولت إلى استراتيجية موسيقية"
+      "It was never written",
+      "It was implemented in full without change",
+      "It was disrupted, and a bridge plan was used",
+      "It became a music strategy"
     ],
     correctIndex: 2,
     explanation: "الافتراضات التي بُنيت عليها الخطة توقفت عن الصحة، فوُضعت خطة مؤقتة (Bridge Plan) لعبور الوضع الفوري."
   },
   {
     id: "q15", partId: "part-5",
-    question: "أي ممارسة تساعد على سماع الأخبار السيئة مبكراً؟",
+    question: "Which practice helps an organization hear bad news early?",
     options: [
-      "مكافأة التقارير الإيجابية فقط",
-      "تشجيع الموظفين على نقل المعلومات السلبية",
-      "حصر المعلومات في الإدارة العليا",
-      "قياس النتائج مرة في السنة"
+      "Rewarding only positive reports",
+      "Encouraging employees to share negative information",
+      "Restricting information to top management",
+      "Measuring results once a year"
     ],
     correctIndex: 1,
     explanation: "الانفتاح على المعلومات السلبية — تشجيع الموظفين على الإبلاغ عما يسير خطأ بينما لا يزال يمكن التصرف."

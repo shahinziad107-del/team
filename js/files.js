@@ -22,77 +22,77 @@ const FileManager = {
     const container = document.getElementById('page-files');
 
     container.innerHTML = `
-      <h2 style="font-family:var(--font-serif);margin-bottom:1rem;">الملفات المرفقة</h2>
+      <h2 style="font-family:var(--font-serif);margin-bottom:1rem;">Attached Files</h2>
 
       <!-- Drop Zone -->
       <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
         <span class="drop-icon">📁</span>
-        <div class="drop-text">اسحب الملفات هنا أو اضغط للاختيار</div>
-        <div class="drop-hint">الامتدادات المسموحة: PPTX, PDF, DOCX, PNG, JPG, WEBP, TXT, MD — الحد الأقصى: ${formatFileSize(MAX_FILE_SIZE)}</div>
+        <div class="drop-text">Drag files here or click to choose</div>
+        <div class="drop-hint">Allowed extensions: PPTX, PDF, DOCX, PNG, JPG, WEBP, TXT, MD — الحد الأقصى: ${formatFileSize(MAX_FILE_SIZE)}</div>
         <input type="file" id="file-input" multiple accept="${ALLOWED_EXTENSIONS.join(',')}" onchange="FileManager.handleFileSelect(event)" />
       </div>
 
       <!-- Upload Form (shown after file selection) -->
       <div class="upload-form" id="upload-form">
-        <h3 style="font-family:var(--font-serif);font-size:1rem;margin-bottom:0.75rem;">تفاصيل الملف</h3>
+        <h3 style="font-family:var(--font-serif);font-size:1rem;margin-bottom:0.75rem;">File Details</h3>
         <div id="upload-file-name" style="font-weight:500;margin-bottom:0.5rem;"></div>
         <div class="form-row">
           <div class="form-field">
-            <label>الجزء المرتبط</label>
+            <label>Related Part</label>
             <select id="upload-part">
-              <option value="">بدون جزء محدد</option>
+              <option value="">No specific part</option>
               ${PARTS.map(p => `<option value="${p.id}">الجزء ${p.number} — ${p.titleAr}</option>`).join('')}
             </select>
           </div>
           <div class="form-field">
-            <label>نوع الملف</label>
+            <label>File Type</label>
             <select id="upload-type">
               <option value="PowerPoint">PowerPoint</option>
               <option value="PDF">PDF</option>
               <option value="Word">Word</option>
-              <option value="Image">صورة</option>
-              <option value="Notes">ملاحظات</option>
-              <option value="Other">أخرى</option>
+              <option value="Image">Image</option>
+              <option value="Notes">Notes</option>
+              <option value="Other">Other</option>
             </select>
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
-            <label>عنوان الملف</label>
-            <input type="text" id="upload-title" placeholder="عنوان وصفي للملف" />
+            <label>File Title</label>
+            <input type="text" id="upload-title" placeholder="Descriptive file title" />
           </div>
         </div>
         <div class="form-row">
           <div class="form-field">
-            <label>وصف (اختياري)</label>
-            <textarea id="upload-desc" placeholder="وصف مختصر..."></textarea>
+            <label>Description (optional)</label>
+            <textarea id="upload-desc" placeholder="Brief description..."></textarea>
           </div>
         </div>
         <div class="upload-progress" id="upload-progress">
           <div class="progress-bar" id="upload-progress-bar"></div>
         </div>
         <div style="display:flex;gap:0.5rem;margin-top:0.75rem;">
-          <button class="btn btn-primary btn-sm" onclick="FileManager.uploadFile()">📤 رفع الملف</button>
-          <button class="btn btn-secondary btn-sm" onclick="FileManager.cancelUpload()">إلغاء</button>
+          <button class="btn btn-primary btn-sm" onclick="FileManager.uploadFile()">📤 Upload File</button>
+          <button class="btn btn-secondary btn-sm" onclick="FileManager.cancelUpload()">Cancel</button>
         </div>
       </div>
 
       <!-- Toolbar -->
       <div class="files-toolbar">
         <select id="files-filter-part" onchange="FileManager.filterPart=this.value;FileManager.renderList();">
-          <option value="all">كل الأجزاء</option>
+          <option value="all">All Parts</option>
           ${PARTS.map(p => `<option value="${p.id}">الجزء ${p.number}</option>`).join('')}
         </select>
         <select id="files-filter-type" onchange="FileManager.filterType=this.value;FileManager.renderList();">
-          <option value="all">كل الأنواع</option>
+          <option value="all">All Types</option>
           <option value="PowerPoint">PowerPoint</option>
           <option value="PDF">PDF</option>
           <option value="Word">Word</option>
-          <option value="Image">صورة</option>
-          <option value="Notes">ملاحظات</option>
-          <option value="Other">أخرى</option>
+          <option value="Image">Image</option>
+          <option value="Notes">Notes</option>
+          <option value="Other">Other</option>
         </select>
-        <input type="text" placeholder="بحث في الملفات..." id="files-search"
+        <input type="text" placeholder="Search files..." id="files-search"
                oninput="FileManager.searchQuery=this.value;FileManager.renderList();" />
       </div>
 
@@ -124,8 +124,8 @@ const FileManager = {
       container.innerHTML = `
         <div class="empty-state">
           <span class="empty-icon">📂</span>
-          <div class="empty-text">لا توجد ملفات مرفقة</div>
-          <div class="empty-hint">اسحب ملفاً إلى منطقة الرفع أعلاه أو اضغط عليها لإضافة ملف.</div>
+          <div class="empty-text">No attached files</div>
+          <div class="empty-hint">Drag a file to the upload area above or click it to add one.</div>
         </div>
       `;
       return;
@@ -149,10 +149,10 @@ const FileManager = {
                 ${f.description ? `<div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.2rem;">${f.description}</div>` : ''}
               </div>
               <div class="file-actions">
-                ${f.type === 'Image' ? `<button onclick="FileManager.preview('${f.id}')" title="معاينة">👁️</button>` : ''}
-                ${f.type === 'PDF' ? `<button onclick="FileManager.preview('${f.id}')" title="معاينة">👁️</button>` : ''}
-                <button onclick="FileManager.download('${f.id}')" title="تحميل">📥</button>
-                <button class="delete" onclick="FileManager.deleteFile('${f.id}')" title="حذف">🗑️</button>
+                ${f.type === 'Image' ? `<button onclick="FileManager.preview('${f.id}')" title="Preview">👁️</button>` : ''}
+                ${f.type === 'PDF' ? `<button onclick="FileManager.preview('${f.id}')" title="Preview">👁️</button>` : ''}
+                <button onclick="FileManager.download('${f.id}')" title="Download">📥</button>
+                <button class="delete" onclick="FileManager.deleteFile('${f.id}')" title="Delete">🗑️</button>
               </div>
             </li>
           `;
@@ -171,11 +171,11 @@ const FileManager = {
 
   prepareUpload(file) {
     if (!isAllowedFile(file.name)) {
-      showToast('امتداد الملف غير مسموح به.', 'error');
+      showToast('File extension is not allowed.', 'error');
       return;
     }
     if (file.size > MAX_FILE_SIZE) {
-      showToast(`حجم الملف يتجاوز الحد الأقصى (${formatFileSize(MAX_FILE_SIZE)}).`, 'error');
+      showToast(`File size exceeds the maximum (${formatFileSize(MAX_FILE_SIZE)}).`, 'error');
       return;
     }
 
@@ -244,19 +244,19 @@ const FileManager = {
         if (progress) progress.classList.remove('show');
         if (progressBar) progressBar.style.width = '0%';
         this.renderList();
-        showToast('تم رفع الملف بنجاح!', 'success');
+        showToast('File uploaded successfully!', 'success');
       }, 300);
     } catch (e) {
       clearInterval(interval);
       if (progress) progress.classList.remove('show');
-      showToast('فشل في رفع الملف.', 'error');
+      showToast('File upload failed.', 'error');
       console.error(e);
     }
   },
 
   async download(id) {
     const file = await dbGet(id);
-    if (!file || !file.data) { showToast('الملف غير موجود.', 'error'); return; }
+    if (!file || !file.data) { showToast('File not found.', 'error'); return; }
 
     const a = document.createElement('a');
     a.href = file.data;
@@ -268,7 +268,7 @@ const FileManager = {
 
   async preview(id) {
     const file = await dbGet(id);
-    if (!file || !file.data) { showToast('الملف غير موجود.', 'error'); return; }
+    if (!file || !file.data) { showToast('File not found.', 'error'); return; }
 
     const overlay = document.getElementById('modal-overlay');
     const title = document.getElementById('modal-title');
@@ -281,21 +281,21 @@ const FileManager = {
     } else if (file.type === 'PDF') {
       body.innerHTML = `<iframe src="${file.data}" style="width:100%;height:70vh;border:none;border-radius:var(--radius-sm);"></iframe>`;
     } else {
-      body.innerHTML = `<p>لا يمكن عرض هذا النوع مباشرة. <button class="btn btn-primary btn-sm" onclick="FileManager.download('${id}')">📥 تحميل</button></p>`;
+      body.innerHTML = `<p>This file type cannot be previewed directly. <button class="btn btn-primary btn-sm" onclick="FileManager.download('${id}')">📥 Download</button></p>`;
     }
 
     if (overlay) overlay.classList.add('show');
   },
 
   async deleteFile(id) {
-    if (!confirm('هل تريد حذف هذا الملف؟')) return;
+    if (!confirm('هل تريد Delete هذا الملف؟')) return;
     try {
       await dbDelete(id);
       this.files = this.files.filter(f => f.id !== id);
       this.renderList();
-      showToast('تم حذف الملف.', 'success');
+      showToast('تم Delete الملف.', 'success');
     } catch (e) {
-      showToast('فشل في حذف الملف.', 'error');
+      showToast('فشل في Delete الملف.', 'error');
     }
   },
 

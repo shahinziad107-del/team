@@ -108,27 +108,27 @@ const App = {
   updateBreadcrumbs(page) {
     const bc = document.getElementById('breadcrumbs');
     if (!bc) return;
-    let crumbs = [{ label: 'الرئيسية', page: 'home' }];
+    let crumbs = [{ label: 'Home', page: 'home' }];
     switch (page) {
       case 'slides':
-        crumbs.push({ label: 'عارض الشرائح' });
+        crumbs.push({ label: 'Slide Viewer' });
         break;
       case 'parts':
-        crumbs.push({ label: 'الأجزاء الخمسة' });
+        crumbs.push({ label: 'Five Parts' });
         break;
       case 'part-detail':
         const part = PARTS.find(p => p.id === this.currentPartId);
-        crumbs.push({ label: 'الأجزاء الخمسة', page: 'parts' });
-        if (part) crumbs.push({ label: `الجزء ${part.number}: ${part.titleAr}` });
+        crumbs.push({ label: 'Five Parts', page: 'parts' });
+        if (part) crumbs.push({ label: `الPart ${part.number}: ${part.titleAr}` });
         break;
       case 'script':
-        crumbs.push({ label: 'سكريبت المحاضر' });
+        crumbs.push({ label: 'Lecture Script' });
         break;
       case 'files':
-        crumbs.push({ label: 'الملفات المرفقة' });
+        crumbs.push({ label: 'Attached Files' });
         break;
       case 'quiz':
-        crumbs.push({ label: 'اختبر نفسك' });
+        crumbs.push({ label: 'Quiz' });
         break;
     }
 
@@ -151,12 +151,12 @@ const App = {
           <button class="btn btn-primary" onclick="App.navigate('parts')">📖 ابدأ الشرح</button>
           <button class="btn btn-secondary" onclick="App.navigate('slides')">🖼️ افتح العرض</button>
           <button class="btn btn-secondary" onclick="App.navigate('files')">📁 الملفات المرفقة</button>
-          <button class="btn btn-secondary" onclick="App.navigate('quiz')">✏️ اختبر نفسك</button>
+          <button class="btn btn-secondary" onclick="App.navigate('quiz')">✏️ اختبر نفQك</button>
         </div>
         <div class="stats-grid">
           <div class="stat-card">
             <span class="stat-number">${SITE_META.totalSlides}</span>
-            <span class="stat-label">شريحة</span>
+            <span class="stat-label">Slide</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">${SITE_META.totalParts}</span>
@@ -164,7 +164,7 @@ const App = {
           </div>
           <div class="stat-card">
             <span class="stat-number">${SITE_META.totalQuestions}</span>
-            <span class="stat-label">سؤال مراجعة</span>
+            <span class="stat-label">Question مراجعة</span>
           </div>
         </div>
         <div class="source-notice">
@@ -173,7 +173,7 @@ const App = {
       </div>
 
       <!-- Parts quick links -->
-      <h2 style="font-family:var(--font-serif);margin:2rem 0 1rem;text-align:center;">الأجزاء الخمسة</h2>
+      <h2 style="font-family:var(--font-serif);margin:2rem 0 1rem;text-align:center;">Five Parts</h2>
       <div class="parts-nav">
         ${PARTS.map(p => `
           <div class="part-nav-card" onclick="App.currentPartId='${p.id}';App.navigate('part-detail')">
@@ -195,7 +195,7 @@ const App = {
   renderParts() {
     const container = document.getElementById('page-parts');
     container.innerHTML = `
-      <h2 style="font-family:var(--font-serif);margin-bottom:1.5rem;">الأجزاء الخمسة</h2>
+      <h2 style="font-family:var(--font-serif);margin-bottom:1.5rem;">Five Parts</h2>
       <div class="parts-nav">
         ${PARTS.map(p => `
           <div class="part-nav-card" onclick="App.currentPartId='${p.id}';App.navigate('part-detail')">
@@ -226,12 +226,12 @@ const App = {
 
       <!-- Summary -->
       <div class="card">
-        <h3>ملخص</h3>
+        <h3>Summary</h3>
         <p style="color:var(--text-secondary);line-height:1.9;">${part.summary}</p>
       </div>
 
       <!-- Concepts -->
-      <h3 class="section-title">المفاهيم الرئيسية</h3>
+      <h3 class="section-title">Key Concepts</h3>
       <ul class="concepts-list">
         ${part.concepts.map(c => `
           <li>
@@ -246,7 +246,7 @@ const App = {
 
       <!-- Examples -->
       ${part.examples.length > 0 ? `
-        <h3 class="section-title">أمثلة المحاضرة</h3>
+        <h3 class="section-title">Lecture Examples</h3>
         ${part.examples.map(ex => `
           <div class="example-card">
             <div class="example-title">${ex.title}</div>
@@ -257,7 +257,7 @@ const App = {
 
       <!-- Effective Leadership (Part 3) -->
       ${part.effectiveLeadership ? `
-        <h3 class="section-title">مكونات القيادة الفعالة الثمانية</h3>
+        <h3 class="section-title">Eight Effective Leadership Components</h3>
         <ul class="concepts-list">
           ${part.effectiveLeadership.map(c => `
             <li>
@@ -271,7 +271,7 @@ const App = {
       <!-- Quick Question -->
       ${part.quickQuestion ? `
         <div class="quick-question" id="qq-${part.id}">
-          <h4>❓ سؤال سريع</h4>
+          <h4>❓ Quick Question</h4>
           <p style="margin-bottom:0.75rem;">${part.quickQuestion.q}</p>
           <div class="qq-options">
             ${part.quickQuestion.options.map((opt, i) => `
@@ -285,11 +285,11 @@ const App = {
 
       <!-- Part Actions -->
       <div class="part-actions">
-        <button class="btn btn-primary btn-sm" onclick="App.navigate('script')">📝 اقرأ السكريبت</button>
-        <button class="btn btn-secondary btn-sm" onclick="SlideViewer.filterByPart('${part.id}');App.navigate('slides')">🖼️ شاهد شرائح هذا الجزء</button>
-        <button class="btn btn-secondary btn-sm" onclick="App.navigate('files')">📁 أضف ملفاً لهذا الجزء</button>
-        ${part.number > 1 ? `<button class="btn btn-secondary btn-sm" onclick="App.currentPartId='part-${part.number-1}';App.navigate('part-detail')">→ الجزء السابق</button>` : ''}
-        ${part.number < 5 ? `<button class="btn btn-secondary btn-sm" onclick="App.currentPartId='part-${part.number+1}';App.navigate('part-detail')">← الجزء التالي</button>` : ''}
+        <button class="btn btn-primary btn-sm" onclick="App.navigate('script')">📝 Read Script</button>
+        <button class="btn btn-secondary btn-sm" onclick="SlideViewer.filterByPart('${part.id}');App.navigate('slides')">🖼️ View This Part’s Slides</button>
+        <button class="btn btn-secondary btn-sm" onclick="App.navigate('files')">📁 Add a File to This Part</button>
+        ${part.number > 1 ? `<button class="btn btn-secondary btn-sm" onclick="App.currentPartId='part-${part.number-1}';App.navigate('part-detail')">→ Previous Part</button>` : ''}
+        ${part.number < 5 ? `<button class="btn btn-secondary btn-sm" onclick="App.currentPartId='part-${part.number+1}';App.navigate('part-detail')">← Next Part</button>` : ''}
       </div>
     `;
   },
@@ -411,19 +411,19 @@ const App = {
 
     container.innerHTML = `
       <div class="script-container">
-        <h2 style="font-family:var(--font-serif);margin-bottom:0.5rem;">سكريبت المحاضر</h2>
+        <h2 style="font-family:var(--font-serif);margin-bottom:0.5rem;">Lecture Script</h2>
         <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem;">
-          النص باللهجة المصرية — جاهز للقراءة أمام الجمهور. الأمثلة مميزة بلون عنابي، والانتقالات بين الشرائح محددة.
+          Arabic lecture script — ready to read aloud. Examples are highlighted, and slide transitions are marked.
         </p>
         <div class="script-actions">
-          <button class="btn btn-secondary btn-sm" onclick="App.copyAllScript()">📋 نسخ السكريبت</button>
-          <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ طباعة</button>
-          <button class="btn btn-secondary btn-sm" onclick="App.downloadScript()">📥 تحميل كنص</button>
+          <button class="btn btn-secondary btn-sm" onclick="App.copyAllScript()">📋 Copy Script</button>
+          <button class="btn btn-secondary btn-sm" onclick="window.print()">🖨️ Print</button>
+          <button class="btn btn-secondary btn-sm" onclick="App.downloadScript()">📥 Download as Text</button>
         </div>
 
         ${PARTS.map(p => `
           <div class="script-part">
-            <h3>الجزء ${p.number}: ${p.titleAr}</h3>
+            <h3>الPart ${p.number}: ${p.titleAr}</h3>
             <div class="script-text">${formatScript(SCRIPTS[p.id])}</div>
           </div>
         `).join('')}
@@ -432,23 +432,23 @@ const App = {
   },
 
   copyAllScript() {
-    const allText = PARTS.map(p => `=== الجزء ${p.number}: ${p.titleAr} ===\n\n${SCRIPTS[p.id]}`).join('\n\n\n');
+    const allText = PARTS.map(p => `=== الPart ${p.number}: ${p.titleAr} ===\n\n${SCRIPTS[p.id]}`).join('\n\n\n');
     navigator.clipboard.writeText(allText).then(() => {
-      showToast('تم نسخ السكريبت بالكامل!', 'success');
+      showToast('Script copied successfully!', 'success');
     }).catch(() => {
-      showToast('فشل النسخ — جرب يدوياً.', 'error');
+      showToast('Copy failed — try manually.', 'error');
     });
   },
 
   downloadScript() {
-    const allText = PARTS.map(p => `=== الجزء ${p.number}: ${p.titleAr} ===\n\n${SCRIPTS[p.id]}`).join('\n\n\n');
+    const allText = PARTS.map(p => `=== الPart ${p.number}: ${p.titleAr} ===\n\n${SCRIPTS[p.id]}`).join('\n\n\n');
     const blob = new Blob([allText], { type: 'text/plain;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = 'script-strategic-leadership.txt';
     a.click();
     URL.revokeObjectURL(a.href);
-    showToast('تم تحميل السكريبت.', 'success');
+    showToast('Script downloaded.', 'success');
   },
 
   // ==================== FILES ====================
@@ -478,8 +478,8 @@ const App = {
     SLIDES.forEach(s => {
       if (s.titleAr.toLowerCase().includes(q) || s.titleEn.toLowerCase().includes(q)) {
         results.push({
-          type: 'شريحة',
-          label: `شريحة ${s.num}: ${s.titleAr}`,
+          type: 'Slide',
+          label: `Slide ${s.num}: ${s.titleAr}`,
           action: `SlideViewer.currentSlide=${s.num};App.navigate('slides')`
         });
       }
@@ -489,8 +489,8 @@ const App = {
     PARTS.forEach(p => {
       if (p.titleAr.includes(q) || p.titleEn.toLowerCase().includes(q) || p.summary.includes(q)) {
         results.push({
-          type: 'جزء',
-          label: `الجزء ${p.number}: ${p.titleAr}`,
+          type: 'Part',
+          label: `الPart ${p.number}: ${p.titleAr}`,
           action: `App.currentPartId='${p.id}';App.navigate('part-detail')`
         });
       }
@@ -498,8 +498,8 @@ const App = {
       p.concepts.forEach(c => {
         if (c.term.includes(q) || c.desc.includes(q)) {
           results.push({
-            type: 'مفهوم',
-            label: `${c.term} — الجزء ${p.number}`,
+            type: 'Concept',
+            label: `${c.term} — الPart ${p.number}`,
             action: `App.currentPartId='${p.id}';App.navigate('part-detail')`
           });
         }
@@ -510,15 +510,15 @@ const App = {
     QUIZ.forEach((qz, i) => {
       if (qz.question.includes(q)) {
         results.push({
-          type: 'سؤال',
-          label: `س${i + 1}: ${qz.question.substring(0, 50)}...`,
+          type: 'Question',
+          label: `Q${i + 1}: ${qz.question.substring(0, 50)}...`,
           action: `Quiz.currentQuestion=${i};App.navigate('quiz')`
         });
       }
     });
 
     if (results.length === 0) {
-      resultsEl.innerHTML = '<div class="search-result-item" style="opacity:0.6;">لا توجد نتائج</div>';
+      resultsEl.innerHTML = '<div class="search-result-item" style="opacity:0.6;">No results</div>';
     } else {
       resultsEl.innerHTML = results.slice(0, 10).map(r => `
         <div class="search-result-item" onclick="${r.action};document.getElementById('search-results').classList.remove('show');document.getElementById('global-search').value='';">

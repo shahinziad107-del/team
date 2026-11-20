@@ -28,19 +28,19 @@ const SlideViewer = {
     container.innerHTML = `
       <div class="slide-viewer">
         <div class="slide-main">
-          <div class="slide-display" onclick="SlideViewer.openFullscreen()" title="اضغط للعرض بملء الشاشة">
-            <img id="slide-img" src="" alt="شريحة" />
+          <div class="slide-display" onclick="SlideViewer.openFullscreen()" title="Click to view fullscreen">
+            <img id="slide-img" src="" alt="Slide" />
             <div class="slide-loading" id="slide-loading"><span class="spinner"></span></div>
           </div>
           <div class="slide-controls">
             <div class="slide-nav-btns">
-              <button onclick="SlideViewer.prev()" id="btn-prev" title="السابقة (←)">→ السابقة</button>
-              <button onclick="SlideViewer.next()" id="btn-next" title="التالية (→)">التالية ←</button>
-              <button onclick="SlideViewer.openFullscreen()" title="ملء الشاشة (F)">⛶</button>
+              <button onclick="SlideViewer.prev()" id="btn-prev" title="Previous (←)">→ Previous</button>
+              <button onclick="SlideViewer.next()" id="btn-next" title="Next (→)">Next ←</button>
+              <button onclick="SlideViewer.openFullscreen()" title="Fullscreen (F)">⛶</button>
             </div>
             <div class="slide-info">
               <div class="slide-goto">
-                <span>انتقل إلى:</span>
+                <span>Go to:</span>
                 <input type="number" id="slide-goto-input" min="1" max="${SLIDES.length}" 
                        value="${this.currentSlide}" onchange="SlideViewer.goTo(this.value)" />
                 <span>/ ${this.filteredSlides.length}</span>
@@ -48,19 +48,19 @@ const SlideViewer = {
             </div>
             <div class="slide-filter">
               <select id="slide-part-filter" onchange="SlideViewer.filterByPart(this.value)">
-                <option value="all">كل الأجزاء</option>
-                ${PARTS.map(p => `<option value="${p.id}">الجزء ${p.number}</option>`).join('')}
-                <option value="mcq">أسئلة المراجعة</option>
+                <option value="all">All Parts</option>
+                ${PARTS.map(p => `<option value="${p.id}">Part ${p.number}</option>`).join('')}
+                <option value="mcq">Review Questions</option>
               </select>
               <select id="slide-type-filter" onchange="SlideViewer.filterByType(this.value)">
-                <option value="all">كل الشرائح</option>
-                <option value="chart">تحتوي مخططات</option>
-                <option value="mcq">أسئلة MCQ</option>
+                <option value="all">All Slides</option>
+                <option value="chart">Contains Charts</option>
+                <option value="mcq">MCQ Questions</option>
               </select>
             </div>
           </div>
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-            <a href="assets/presentation.pdf" download class="btn btn-secondary btn-sm">📥 تحميل PDF</a>
+            <a href="assets/presentation.pdf" download class="btn btn-secondary btn-sm">📥 Download PDF</a>
           </div>
         </div>
         <div class="slide-thumbnails" id="slide-thumbs"></div>
@@ -70,9 +70,9 @@ const SlideViewer = {
         <button class="fs-close" onclick="SlideViewer.closeFullscreen()">✕</button>
         <img id="fs-img" src="" alt="" />
         <div class="fs-nav">
-          <button onclick="SlideViewer.next()">← التالية</button>
+          <button onclick="SlideViewer.next()">← Next</button>
           <span class="fs-counter" id="fs-counter"></span>
-          <button onclick="SlideViewer.prev()">السابقة →</button>
+          <button onclick="SlideViewer.prev()">Previous →</button>
         </div>
       </div>
     `;
@@ -85,8 +85,8 @@ const SlideViewer = {
     if (!container) return;
     container.innerHTML = this.filteredSlides.map(s => `
       <div class="thumb ${s.num === this.currentSlide ? 'active' : ''}" 
-           onclick="SlideViewer.goTo(${s.num})" title="شريحة ${s.num}">
-        <img src="${s.image}" alt="شريحة ${s.num}" loading="lazy" />
+           onclick="SlideViewer.goTo(${s.num})" title="Slide ${s.num}">
+        <img src="${s.image}" alt="Slide ${s.num}" loading="lazy" />
         <span class="thumb-num">${s.num}</span>
         ${s.hasChart ? '<span class="thumb-badge badge-chart">📊</span>' : ''}
         ${s.isMCQ ? '<span class="thumb-badge badge-mcq">MCQ</span>' : ''}
@@ -109,7 +109,7 @@ const SlideViewer = {
     if (loading) loading.style.display = 'flex';
     if (img) {
       img.onload = () => { if (loading) loading.style.display = 'none'; };
-      img.onerror = () => { if (loading) loading.innerHTML = '<span>تعذر تحميل الشريحة</span>'; };
+      img.onerror = () => { if (loading) loading.innerHTML = '<span>Unable to load slide</span>'; };
       img.src = slide.image;
     }
     if (fsImg) fsImg.src = slide.image;

@@ -27,9 +27,9 @@ const Quiz = {
     container.innerHTML = `
       <div class="quiz-container">
         <div class="quiz-header">
-          <h2 style="font-family:var(--font-serif);margin-bottom:0.75rem;">اختبر نفسك</h2>
+          <h2 style="font-family:var(--font-serif);margin-bottom:0.75rem;">Quiz Yourself</h2>
           <div class="quiz-progress"><div class="progress-fill" style="width:${progress}%"></div></div>
-          <div class="quiz-counter">السؤال ${this.currentQuestion + 1} من ${QUIZ.length}</div>
+          <div class="quiz-counter">Question ${this.currentQuestion + 1} of ${QUIZ.length}</div>
         </div>
         <div class="quiz-question">
           <h3>${q.question}</h3>
@@ -49,19 +49,19 @@ const Quiz = {
             }).join('')}
           </div>
           <div class="quiz-explanation ${answered ? 'show' : ''}" id="quiz-exp">
-            ${answered ? (this.answers[q.id] === q.correctIndex ? '✅ إجابة صحيحة! ' : '❌ إجابة خاطئة. ') + q.explanation : ''}
+            ${answered ? (this.answers[q.id] === q.correctIndex ? '✅ Correct! ' : '❌ Incorrect. ') + q.explanation : ''}
           </div>
         </div>
         <div class="quiz-nav">
           <button class="btn btn-secondary btn-sm" onclick="Quiz.prevQuestion()" 
-                  ${this.currentQuestion === 0 ? 'disabled' : ''}>→ السابق</button>
+                  ${this.currentQuestion === 0 ? 'disabled' : ''}>→ Previous</button>
           ${this.currentQuestion < QUIZ.length - 1 
-            ? `<button class="btn btn-primary btn-sm" onclick="Quiz.nextQuestion()" ${!answered ? 'disabled' : ''}>التالي ←</button>`
-            : `<button class="btn btn-primary btn-sm" onclick="Quiz.submit()" ${!answered ? 'disabled' : ''}>عرض النتائج</button>`
+            ? `<button class="btn btn-primary btn-sm" onclick="Quiz.nextQuestion()" ${!answered ? 'disabled' : ''}>Next ←</button>`
+            : `<button class="btn btn-primary btn-sm" onclick="Quiz.submit()" ${!answered ? 'disabled' : ''}>Show Results</button>`
           }
         </div>
         <div style="text-align:center;margin-top:1rem;">
-          <button class="btn btn-secondary btn-sm" onclick="Quiz.restart()">🔄 إعادة الاختبار</button>
+          <button class="btn btn-secondary btn-sm" onclick="Quiz.restart()">🔄 Restart Quiz</button>
         </div>
       </div>
     `;
@@ -116,19 +116,19 @@ const Quiz = {
         <div class="quiz-results">
           <div style="font-size:3rem;margin-bottom:0.5rem;">${emoji}</div>
           <div class="quiz-score">${correct} / ${QUIZ.length}</div>
-          <div class="quiz-score-text">${percentage}% — ${percentage >= 70 ? 'أداء ممتاز!' : percentage >= 50 ? 'أداء جيد، راجع الأجزاء الضعيفة.' : 'تحتاج مراجعة أكثر.'}</div>
+          <div class="quiz-score-text">${percentage}% — ${percentage >= 70 ? 'Excellent performance!' : percentage >= 50 ? 'Good performance; review the weaker sections.' : 'More review is needed.'}</div>
           <div class="quiz-results-list">
             ${QUIZ.map((q, i) => {
               const isCorrect = this.answers[q.id] === q.correctIndex;
               return `<div class="result-item">
                 <span class="${isCorrect ? 'result-icon-correct' : 'result-icon-wrong'}">${isCorrect ? '✅' : '❌'}</span>
-                <span>س${i+1}: ${q.question.substring(0, 60)}...</span>
+                <span>Q${i+1}: ${q.question.substring(0, 60)}...</span>
               </div>`;
             }).join('')}
           </div>
           <div style="margin-top:1.5rem;display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
-            <button class="btn btn-primary" onclick="Quiz.restart()">🔄 إعادة الاختبار</button>
-            <button class="btn btn-secondary" onclick="App.navigate('home')">🏠 الرئيسية</button>
+            <button class="btn btn-primary" onclick="Quiz.restart()">🔄 Restart Quiz</button>
+            <button class="btn btn-secondary" onclick="App.navigate('home')">🏠 Home</button>
           </div>
         </div>
       </div>
