@@ -81,6 +81,7 @@ const App = {
       case 'slides': this.renderSlides(); break;
       case 'parts': this.renderParts(); break;
       case 'part-detail': this.renderPartDetail(); break;
+      case 'video': this.renderVideo(); break;
       case 'files': this.renderFiles(); break;
       case 'quiz': this.renderQuiz(); break;
       default: this.renderHome(); page = 'home';
@@ -119,6 +120,9 @@ const App = {
         const part = PARTS.find(p => p.id === this.currentPartId);
         crumbs.push({ label: 'Five Parts', page: 'parts' });
         if (part) crumbs.push({ label: `الPart ${part.number}: ${part.titleAr}` });
+        break;
+      case 'video':
+        crumbs.push({ label: 'Lecture Video' });
         break;
       case 'files':
         crumbs.push({ label: 'Attached Files' });
@@ -397,6 +401,29 @@ const App = {
   // ==================== FILES ====================
   async renderFiles() {
     await FileManager.render();
+  },
+
+  // ==================== VIDEO ====================
+  renderVideo() {
+    const container = document.getElementById('page-video');
+    if (!container) return;
+    container.innerHTML = `
+      <div class="video-page">
+        <h2>🎥 Lecture Video</h2>
+        <p class="video-description">
+          Watch the lecture video here. It is hosted on Google Drive and is not stored in the GitHub repository.
+        </p>
+        <div class="video-frame">
+          <iframe
+            src="https://drive.google.com/file/d/1YcIu4NwVD3dDwSDD6t0s-AyIGAxSc2A8/preview"
+            title="Lecture Video"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <a class="btn btn-primary video-open-link" href="https://drive.google.com/file/d/1YcIu4NwVD3dDwSDD6t0s-AyIGAxSc2A8/view?usp=sharing" target="_blank" rel="noopener noreferrer">🔗 Open in Google Drive</a>
+      </div>
+    `;
   },
 
   // ==================== QUIZ ====================

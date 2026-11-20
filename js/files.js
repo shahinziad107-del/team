@@ -24,26 +24,6 @@ const FileManager = {
     container.innerHTML = `
       <h2 style="font-family:var(--font-serif);margin-bottom:1rem;">Attached Files</h2>
 
-      <!-- Google Drive lecture video -->
-      <div class="card" style="margin-bottom:1.25rem;">
-        <h3 style="font-family:var(--font-serif);margin-bottom:0.5rem;">🎥 Lecture Video</h3>
-        <p style="color:var(--text-secondary);margin-bottom:0.75rem;">
-          The lecture video is hosted on Google Drive and is displayed here without uploading the large file to GitHub.
-        </p>
-        <div style="position:relative;width:100%;padding-top:56.25%;overflow:hidden;border-radius:var(--radius-sm);background:#111;">
-          <iframe
-            src="https://drive.google.com/file/d/1YcIu4NwVD3dDwSDD6t0s-AyIGAxSc2A8/preview"
-            title="Lecture Video"
-            allow="autoplay; fullscreen"
-            allowfullscreen
-            style="position:absolute;inset:0;width:100%;height:100%;border:0;"
-          ></iframe>
-        </div>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.75rem;">
-          <a class="btn btn-primary btn-sm" href="https://drive.google.com/file/d/1YcIu4NwVD3dDwSDD6t0s-AyIGAxSc2A8/view?usp=sharing" target="_blank" rel="noopener noreferrer">🔗 Open in Google Drive</a>
-        </div>
-      </div>
-
       <!-- Drop Zone -->
       <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
         <span class="drop-icon">📁</span>
