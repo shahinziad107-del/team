@@ -25,9 +25,9 @@ const FileManager = {
       <h2 style="font-family:var(--font-serif);margin-bottom:1rem;">Attached Files</h2>
 
       <div class="private-reference-note" role="note">
-        <strong>Private reference note:</strong>
-        Files added here are stored locally in this browser only. They are not uploaded to GitHub,
-        published, or shown to other visitors; they are kept as reference material for you.
+        <strong>📌 ملحوظة مهمة:</strong>
+        الملفات اللي بتضيفها هنا بتتخزن محليًا على المتصفح ده بس 💾. مش بتترفع على GitHub،
+        ومش بتتنشر أو تظهر لأي زائر تاني 🔒؛ هي محفوظة كمرجع ليك 📝.
       </div>
 
       <!-- Drop Zone -->
