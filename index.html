@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>القيادة الاستراتيجية والمرونة — منصة تعليمية</title>
+  <meta name="description" content="منصة تعليمية لشرح عرض Strategic Leadership and Flexibility — محتوى مبني على فيديو المحاضرة والعرض فقط." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>" />
+</head>
+<body>
+  <!-- Top Accent Bar -->
+  <div class="top-bar"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="navbar-brand" onclick="App.navigate('home')">📖 القيادة الاستراتيجية</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="القائمة">☰</button>
+
+      <div class="navbar-links" id="nav-links">
+        <a data-page="home" onclick="App.navigate('home')">الرئيسية</a>
+        <a data-page="slides" onclick="App.navigate('slides')">العرض</a>
+        <a data-page="parts" onclick="App.navigate('parts')">الأجزاء</a>
+        <a data-page="script" onclick="App.navigate('script')">السكريبت</a>
+        <a data-page="files" onclick="App.navigate('files')">الملفات</a>
+        <a data-page="quiz" onclick="App.navigate('quiz')">اختبر نفسك</a>
+      </div>
+
+      <div class="nav-search">
+        <input type="text" id="global-search" placeholder="بحث..." autocomplete="off" />
+        <span class="search-icon">🔍</span>
+        <div class="search-results" id="search-results"></div>
+      </div>
+
+      <button class="theme-toggle" id="theme-btn" onclick="App.toggleTheme()" title="تبديل الوضع">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" id="breadcrumbs"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="page" id="page-home"></div>
+    <div class="page" id="page-slides"></div>
+    <div class="page" id="page-parts"></div>
+    <div class="page" id="page-part-detail"></div>
+    <div class="page" id="page-script"></div>
+    <div class="page" id="page-files"></div>
+    <div class="page" id="page-quiz"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align:center;padding:2rem 1rem;color:var(--text-secondary);font-size:0.8rem;border-top:1px solid var(--border);margin-top:2rem;">
+    <p>المحتوى مبني على فيديو المحاضرة والعرض المرفق فقط. لا معلومات خارجية إلا إذا مميزة بوضوح.</p>
+    <p style="margin-top:0.3rem;opacity:0.6;direction:ltr;">Strategic Leadership and Flexibility — Lecture-Based Review</p>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Modal for file preview -->
+  <div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)this.classList.remove('show')">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">معاينة</h3>
+        <button class="modal-close" onclick="document.getElementById('modal-overlay').classList.remove('show')">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Scripts (order matters) -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/slides.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/files.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
